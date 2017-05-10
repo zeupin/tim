@@ -1,0 +1,24 @@
+$global-width: 1200px !default;
+
+// 媒体查询的断点
+$breakpoints: (
+  x: 1400px,
+  l: 1200px,
+  m: 1024px,
+  s:  0
+) !global;
+
+// 适用于打印机断点
+$breakpoint-print: large;
+
+// 列数
+$grid-column-count: 12;
+
+// 行宽
+$grid-row-width: $global-width;
+
+// 列间隙
+$grid-column-gutter: (
+  md: 20px,
+  lg: 30px,
+);

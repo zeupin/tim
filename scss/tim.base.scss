@@ -2,3 +2,6 @@
 
 // 导入 normalize.css,做全局 reset 处理
 @import "vendor/normalize/normalize";
+
+// 网格系统
+@import "components/layout/_layout.scss";
