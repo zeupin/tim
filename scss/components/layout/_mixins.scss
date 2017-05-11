@@ -1,0 +1,12 @@
+/// 生成列宽
+@mixin col-width() {
+  @each $breakpoint-name, $breakpoint-width in $breakpoints {
+    @media screen and (min-width: $breakpoint-width){
+      @for $i from 1 through $grid-column-count {
+        #{$breakpoint-name}#{$i} {
+          width: percentage($i / $grid-column-count);
+        }
+      }
+    }
+  }
+}

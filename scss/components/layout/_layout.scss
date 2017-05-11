@@ -1,11 +1,14 @@
-/*! layout */
+/**
+ * Layout 布局
+ */
 
 // 导入配置项
 @import "settings";
 
-@import "col";
+// 导入mixins
+@import "mixins";
 
-// 媒体查询
-@import "media_query";
+// 生成列
+@import "col";
 
 @import "test";
