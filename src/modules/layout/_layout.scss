@@ -8,7 +8,13 @@
 // 导入mixins
 @import "mixins";
 
-// 生成列
-@import "col";
+.row {
+  margin: 1px 0;
+  overflow: auto; // needed for proper formed layout
+}
+
+
+// 生成网格系统
+@import "grid";
 
 @import "test";

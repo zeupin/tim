@@ -1,24 +1,17 @@
-$global-width: 1200px !default;
-
 // 媒体查询的断点
-$breakpoints: (
-  x: 1400px,
-  l: 1200px,
-  m: 1024px,
-  s:  0
+$layout-breakpoints: (
+  md: 64em,    // 1024px
+  lg: 75em,    // 1200px
+  xl: 87.5em,  // 1400px
 ) !global;
 
-// 适用于打印机断点
-$breakpoint-print: large;
+// 默认的两列之间的间隙宽度
+$grid-col-gutter: 1% !global;
+$grid-six-gutter: 2% !global;
 
-// 列数
-$grid-column-count: 3;
-
-// 行宽
-$grid-row-width: $global-width;
-
-// 列间隙
-$grid-column-gutter: (
-  md: 20px,
-  lg: 30px,
-);
+// 20列响应式的两列之间的间隙宽度
+$grid-gutters: (
+  md: 1%,
+  lg: 1%,
+  xl: 1%,
+) !global;

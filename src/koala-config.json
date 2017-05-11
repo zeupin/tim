@@ -19,7 +19,7 @@
 	// Compile options of Sass.
 	"options": {
 		// Output style. Can be nested (default), compact, compressed, or expanded.
-		"outputStyle": "compressed",
+		"outputStyle": "compact",
 		// Emit comments in the generated CSS indicating the corresponding source line.
 		"lineComments": false,
 		// Emit extra information in the generated CSS that can be used by the FireSass Firebug plugin.
