@@ -1,14 +1,17 @@
-// 横屏
-@media screen and (orientation:landscape){
+// // 默认screen
+// @media screen {
+//   .row.nogutter > .col {
+//     @include unit-width--no-gutter();
+//     @include sixth-width--no-gutter();
+//   }
+// }
 
-}
-
-// 竖屏
-@media screen and (orientation:portrait){
-
-}
-
-// 打印
-@media print{
-
-}
+// // 依次设置每种screen类型
+// @each $key, $width in $layout-breakpoints {
+//   @media screen and (min-width: $width) {
+//     .row.nogutter > .col {
+//       @include unit-width--no-gutter($key);
+//       @include sixth-width--no-gutter($key);
+//     }
+//   }
+// }

@@ -3,18 +3,18 @@
  */
 
 // 导入配置项
-@import "settings";
+@import "./_settings.scss";
 
 // 导入mixins
-@import "mixins";
+@import "./_mixins.grid-framework.scss";
+@import "./_mixins.grid.scss";
+@import "./_mixins.scss";
 
-.row {
-  margin: 1px 0;
-  overflow: auto; // needed for proper formed layout
-}
-
+// 媒体查询
+@import "./_media_query.scss";
 
 // 生成网格系统
-@import "grid";
+@import "./_grid.scss";
 
+// 测试用的一些内容
 @import "test";

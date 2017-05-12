@@ -1,73 +1,70 @@
-/// 固定生成20列和6列两个网格系统
-/// 20列 从 .col-1 到 .col-20
-///  6列 从 .six-1 到 .six-6, 列间隔固定为2%
-/// 每列的padding都固定为1%
-@mixin col-width-default {
-  @media screen {
-
-    // 生成20列网格
-    @for $i from 1 through 20 {
-      .col-#{$i} {
-        padding: auto ($grid-col-gutter / 2);
-        float: left;
-        @if $i < 20 {
-          width: percentage($i / 20) - $grid-col-gutter;
-        } @else {
-          width: 98%;
-        }
-      }
-    }
-
-    // 生成6列网格
-    @for $i from 1 through 6 {
-      .six-#{$i} {
-        width: 15% * $i + $grid-six-gutter * ($i - 1);
-      }
-    }
-
-  }
-}
-
-/// 生成大屏幕的响应式列宽表
+/// 20列的宽度，不考虑gutter
 ///
-/// @param: $min-width    断点的最小值
-/// @param: $media-type   断点名，比如 md,lg,xl等
-/// @param: $gutter: 1%   列间的间距值，默认为1%
-@mixin col-width-with-media (
-  $min-width,
-  $media-type,
-  $gutter: 1%
-) {
-  @media screen and (min-width: $min-width){
-
-    // 生成20列网格
-    @for $i from 1 through 20 {
-      .col-#{$i}--#{$media-type} {
-        @if $i < 20 {
-          width: percentage($i / 20) - $gutter;
-        } @else {
-          width: 100%;
-        }
-      }
+/// 生成：
+/// unit-1 { width:  5% }  或 unit-1--md { width:  5%} 等等
+/// unit-2 { width: 10% }  或 unit-2--md { width: 10%} 等等
+///
+/// @param {string} $media-type 媒体类型。一般为 md,lg,xl 等。
+@mixin unit-width--no-gutter(
+  $media-type: null
+)
+{
+  @for $i from 1 through 20 {
+    // 先确定目标类的类名
+    $classname: "unit-";
+    @if $media-type == null {
+      $classname: ".unit-#{$i}";
+    }
+    @else {
+      $classname: ".unit-#{$i}--#{$media-type}";
     }
 
-    // 生成6列网格
-    @for $i from 1 through 6 {
-      .six-#{$i}--#{$media-type} {
-        width: 15% * $i + $grid-six-gutter * ($i - 1);
+    // 生成定义
+    #{$classname} {
+      @if $i < 20 {
+        width: 5% * $i;
+      }
+      @else {
+        width: 100%;
       }
     }
-
   }
 }
 
-/// 生成列宽
-@mixin col-width($grid-gutters) {
-  // 生成移动优先的默认列宽
-  @include col-width-default;
 
-  // 生成适用于大屏幕的列宽
-  @each $key, $width in $layout-breakpoints {
-    //@include col-width-with-media($width, $key, map-get($grid-gutters, $key));
+/// 6列的宽度，不考虑gutter
+///
+/// 生成：
+/// sixth-1 { width: 16.66666% }  或 sixth-1--md { width: 16.66666%} 等等
+/// sixth-2 { width: 33.33333% }  或 sixth-2--md { width: 33.33333%} 等等
+///
+/// @param {string} $media-type 媒体类型。一般为 md,lg,xl 等。
+@mixin sixth-width--no-gutter(
+  $media-type: null
+)
+{
+  $value: (
+    16.66666%,
+    33.33333%,
+    50%,
+    66.66666%,
+    83.33333%,
+    100%
+  );
+
+  @for $i from 1 through 6 {
+    // 先确定目标类的类名
+    $classname: "sixth-";
+    @if $media-type == null {
+      $classname: ".sixth-#{$i}";
+    }
+    @else {
+      $classname: ".sixth-#{$i}--#{$media-type}";
+    }
+
+    // 生成定义
+    #{$classname} {
+      width: nth($value , $i);
+    }
   }
 }

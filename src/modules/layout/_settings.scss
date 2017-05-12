@@ -5,13 +5,3 @@ $layout-breakpoints: (
   xl: 87.5em,  // 1400px
 ) !global;
 
-// 默认的两列之间的间隙宽度
-$grid-col-gutter: 1% !global;
-$grid-six-gutter: 2% !global;
-
-// 20列响应式的两列之间的间隙宽度
-$grid-gutters: (
-  md: 1%,
-  lg: 1%,
-  xl: 1%,
-) !global;

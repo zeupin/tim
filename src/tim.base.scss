@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
+// 导入mixins库
+@import "mixins/index";
+
 // 导入 normalize.css,做全局 reset 处理
 @import "vendor/normalize/normalize";
 
-// 网格系统
+// 布局系统
 @import "modules/layout/_layout.scss";
