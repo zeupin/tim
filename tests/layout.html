@@ -13,11 +13,11 @@
       text-align: center;
     }
 
-    .color-a {
+    .color-b {
       background-color: #a23454;
     }
 
-    .color-b {
+    .color-a {
       background-color: #434478;
     }
 
@@ -26,12 +26,15 @@
     }
 
     .row {
-      margin-top: 2px;
-      margin-bottom: 2px;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
-    .col {
+    .box {
       white-space: nowrap;
+      min-height: 1.2em;
+      width: 100%;
+      border: 1px solid gray;
     }
   </style>
 </head>
@@ -40,45 +43,83 @@
 
   <h2>10列网格</h2>
 
-  <div class="container">
-    <div class="row">
-      <div class="col grid-10-1 color-b">grid-10-1</div>
-      <div class="col grid-10-9 color-a">grid-10-9</div>
+  <div class="container gutter">
+    <div class="row ">
+      <div class="col grid-10-1">
+        <div class="box">grid-10-1</div>
+      </div>
+      <div class="col grid-10-9">
+        <div class="box">grid-10-9</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-2 color-b">grid-10-2</div>
-      <div class="col grid-10-8 color-a">grid-10-8</div>
+      <div class="col grid-10-2">
+        <div class="box">grid-10-2</div>
+      </div>
+      <div class="col grid-10-8">
+        <div class="box">grid-10-8</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-3 color-b">grid-10-3</div>
-      <div class="col grid-10-7 color-a">grid-10-7</div>
+      <div class="col grid-10-3">
+        <div class="box">grid-10-3</div>
+      </div>
+      <div class="col grid-10-7">
+        <div class="box">grid-10-7</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-4 color-b">grid-10-4</div>
-      <div class="col grid-10-6 color-a">grid-10-6</div>
+      <div class="col grid-10-4">
+        <div class="box">grid-10-4</div>
+      </div>
+      <div class="col grid-10-6">
+        <div class="box">grid-10-6</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-5 color-b">grid-10-5</div>
-      <div class="col grid-10-5 color-a">grid-10-5</div>
+      <div class="col grid-10-5">
+        <div class="box">grid-10-5</div>
+      </div>
+      <div class="col grid-10-5">
+        <div class="box">grid-10-5</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-6 color-b">grid-10-6</div>
-      <div class="col grid-10-4 color-a">grid-10-4</div>
+      <div class="col grid-10-6">
+        <div class="box">grid-10-6</div>
+      </div>
+      <div class="col grid-10-4">
+        <div class="box">grid-10-4</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-7 color-b">grid-10-7</div>
-      <div class="col grid-10-3 color-a">grid-10-3</div>
+      <div class="col grid-10-7">
+        <div class="box">grid-10-7</div>
+      </div>
+      <div class="col grid-10-3">
+        <div class="box">grid-10-3</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-8 color-b">grid-10-8</div>
-      <div class="col grid-10-2 color-a">grid-10-2</div>
+      <div class="col grid-10-8">
+        <div class="box">grid-10-8</div>
+      </div>
+      <div class="col grid-10-2">
+        <div class="box">grid-10-2</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-10-9 color-b">grid-10-9</div>
-      <div class="col grid-10-1 color-a">grid-10-1</div>
+      <div class="col grid-10-9">
+        <div class="box">grid-10-9</div>
+      </div>
+      <div class="col grid-10-1">
+        <div class="box">grid-10-1</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col color-b">null</div>
+      <div class="col">
+        <div class="box">grid-10-10</div>
+      </div>
     </div>
   </div>
 
@@ -86,27 +127,27 @@
 
   <div class="container">
     <div class="row">
-      <div class="col grid-6-1 color-b">grid-6-1</div>
-      <div class="col grid-6-5 color-a">grid-6-5</div>
-    </div>
-    <div class="row">
-      <div class="col grid-6-2 color-b">grid-6-2</div>
-      <div class="col grid-6-4 color-a">grid-6-4</div>
-    </div>
-    <div class="row">
-      <div class="col grid-6-3 color-b">grid-6-3</div>
-      <div class="col grid-6-3 color-a">grid-6-3</div>
-    </div>
-    <div class="row">
-      <div class="col grid-6-4 color-b">grid-6-4</div>
-      <div class="col grid-6-2 color-a">grid-6-2</div>
-    </div>
-    <div class="row">
-      <div class="col grid-6-5 color-b">grid-6-5</div>
       <div class="col grid-6-1 color-a">grid-6-1</div>
+      <div class="col grid-6-5 color-b">grid-6-5</div>
     </div>
     <div class="row">
-      <div class="col grid-6-6 color-b">grid-6-6</div>
+      <div class="col grid-6-2 color-a">grid-6-2</div>
+      <div class="col grid-6-4 color-b">grid-6-4</div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-3 color-a">grid-6-3</div>
+      <div class="col grid-6-3 color-b">grid-6-3</div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-4 color-a">grid-6-4</div>
+      <div class="col grid-6-2 color-b">grid-6-2</div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-5 color-a">grid-6-5</div>
+      <div class="col grid-6-1 color-b">grid-6-1</div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-6 color-a">grid-6-6</div>
     </div>
   </div>
 
@@ -114,8 +155,8 @@
 
   <div class="container">
     <div class="row">
-      <div class="col  grid-4-1--md grid-2-1--lg color-a">A</div>
-      <div class="col  grid-4-3--md grid-2-1--lg color-b">B</div>
+      <div class="col  grid-4-1--md grid-2-1--lg color-b">A</div>
+      <div class="col  grid-4-3--md grid-2-1--lg color-a">B</div>
     </div>
   </div>
 
@@ -123,16 +164,16 @@
 
   <div class="container">
     <div class="row">
-      <div class="col grid-6-1 color-a">grid-6-1</div>
-      <div class="col grid-6-1 push-6-1 color-b">grid-6-1 <br> push-6-1</div>
-    </div>
-    <div class="row">
       <div class="col grid-6-1 color-b">grid-6-1</div>
-      <div class="col grid-6-1 push-6-2 color-a">grid-6-1 <br> push-6-2</div>
+      <div class="col grid-6-1 push-6-1 color-a">grid-6-1 <br> push-6-1</div>
     </div>
     <div class="row">
-      <div class="col grid-6-1 color-a">A</div>
-      <div class="col grid-6-1 push-6-1 color-b">B <br> pull-6-1</div>
+      <div class="col grid-6-1 color-a">grid-6-1</div>
+      <div class="col grid-6-1 push-6-2 color-b">grid-6-1 <br> push-6-2</div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-1 color-b">A</div>
+      <div class="col grid-6-1 push-6-1 color-a">B <br> pull-6-1</div>
       <div class="col grid-6-1 pull-6-1 color-c">C <br> push-6-1</div>
     </div>
   </div>
@@ -141,8 +182,8 @@
 
   <div class="container">
     <div class="row">
-      <div class="col grid-6-1 color-a">A</div>
-      <div class="col grid-6-1 offset-6-1 color-b">B <br> offset-6-1</div>
+      <div class="col grid-6-1 color-b">A</div>
+      <div class="col grid-6-1 offset-6-1 color-a">B <br> offset-6-1</div>
       <div class="col grid-6-1 offset-6-1 color-c">C <br> offset-6-1</div>
     </div>
   </div>

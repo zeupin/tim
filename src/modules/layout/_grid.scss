@@ -1,17 +1,3 @@
-$grid-gutter-width : 1em !default;
-
-$screen-sm-min : 40em !default;
-$container-sm :  40em !default;
-
-$screen-md-min : 64em !default;
-$container-md :  64em !default;
-
-$screen-lg-min : 80em !default;
-$container-lg :  80em !default;
-
-$grid-columns: 12 !default;
-
-
 /// -----------------------------------------------------------------------
 /// Reset
 /// -----------------------------------------------------------------------
@@ -39,12 +25,27 @@ $grid-columns: 12 !default;
 /// @param {em} $gutter 两列之间的间距
 
 @mixin container-fixed(
-  $gutter: $grid-gutter-width
+  $gutter-list: $layout-gutter-list
 ){
   margin-right: auto;
   margin-left: auto;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
+  overflow: hidden;
+
+  // gutter设置开始
+  padding-left:  0;
+  padding-right: 0;
+  @each $key, $gutter in $gutter-list {
+    $gutter-class: ".gutter-#{$key}";
+    @if $key == default {
+      $gutter-class: ".gutter";
+    }
+    &#{$gutter-class} {
+      padding-left:  ($gutter / -2);
+      padding-right: ($gutter / -2);
+    }
+  }
+  // gutter设置结束
+
   @include clearfix;
 }
 
@@ -74,10 +75,23 @@ $grid-columns: 12 !default;
 
 /// 生成 row
 @mixin make-row(
-  $gutter: $grid-gutter-width
+  $gutter-list: $layout-gutter-list
 ){
-  margin-left:  ($gutter / -2);
-  margin-right: ($gutter / -2);
+  // gutter设置开始
+  margin-left:  0;
+  margin-right: 0;
+  @each $key, $gutter in $gutter-list {
+    $gutter-class: ".gutter-#{$key}";
+    @if $key == default {
+      $gutter-class: ".gutter";
+    }
+    #{$gutter-class} & {
+      margin-left: ($gutter / -2);
+      margin-right: ($gutter / -2);
+    }
+  }
+  // gutter设置结束
+
   @include clearfix;
 }
 
@@ -92,18 +106,29 @@ $grid-columns: 12 !default;
 /// -----------------------------------------------------------------------
 
 @mixin make-col(
-  $gutter: $grid-gutter-width
+  $gutter-list: $layout-gutter-list
 ) {
   .col {
     position: relative;
-    // Prevent columns from collapsing when empty
     min-height: 1px;
-    // Inner gutter via padding
-    padding-left:  ($grid-gutter-width / 2);
-    padding-right: ($grid-gutter-width / 2);
     float: left;
     overflow: hidden;
     width: 100%;
+
+    // gutter设置开始
+    padding-left:  0;
+    padding-right: 0;
+    @each $key, $gutter in $gutter-list {
+      $gutter-class: ".gutter-#{$key}";
+      @if $key == default {
+        $gutter-class: ".gutter";
+      }
+      #{$gutter-class} & {
+        padding-left:  ($gutter / 2);
+        padding-right: ($gutter / 2);
+      }
+    }
+    // gutter设置结束
   }
 }
 
@@ -248,19 +273,19 @@ $grid-columns: 12 !default;
 /// 默认screen
 @media screen {
   .grid {width: 100%}
-  @include make-grid(default, $grid-list);
-  @include make-push(default, $grid-list);
-  @include make-pull(default, $grid-list);
-  @include make-offset(default, $grid-list);
+  @include make-grid(default, $layout-grid-list);
+  @include make-push(default, $layout-grid-list);
+  @include make-pull(default, $layout-grid-list);
+  @include make-offset(default, $layout-grid-list);
 }
 
 /// 依次设置每种screen类型
 @each $key, $width in $layout-breakpoints {
   @media screen and (min-width: $width) {
-    @include make-grid($key, $grid-list);
-    @include make-push($key, $grid-list);
-    @include make-pull($key, $grid-list);
-    @include make-offset($key, $grid-list);
+    @include make-grid($key, $layout-grid-list);
+    @include make-push($key, $layout-grid-list);
+    @include make-pull($key, $layout-grid-list);
+    @include make-offset($key, $layout-grid-list);
   }
 }
 

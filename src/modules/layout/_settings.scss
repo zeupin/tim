@@ -5,4 +5,12 @@ $layout-breakpoints: (
   xl: 87.5em,  // 1400px
 ) !global;
 
-$grid-list: 2 3 4 5 6 7 8 9 10 12 20;
+// 网格系列
+$layout-grid-list: 2 3 4 5 6 7 8 9 10 12 20;
+
+// Gutter系列
+$layout-gutter-list: (
+  default: 1.2%,
+  x: 2%,
+  xx: 4%,
+);
