@@ -1,17 +1,11 @@
-// // 默认screen
-// @media screen {
-//   .row.nogutter > .col {
-//     @include unit-width--no-gutter();
-//     @include sixth-width--no-gutter();
-//   }
-// }
+// 默认screen
+@media screen {
+  @include make-grid(default, $grid-list);
+}
 
-// // 依次设置每种screen类型
-// @each $key, $width in $layout-breakpoints {
-//   @media screen and (min-width: $width) {
-//     .row.nogutter > .col {
-//       @include unit-width--no-gutter($key);
-//       @include sixth-width--no-gutter($key);
-//     }
-//   }
-// }
+// 依次设置每种screen类型
+@each $key, $width in $layout-breakpoints {
+  @media screen and (min-width: $width) {
+    @include make-grid($key, $grid-list);
+  }
+}

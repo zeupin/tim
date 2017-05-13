@@ -1,4 +1,43 @@
-/// 20列的宽度，不考虑gutter
+/// -----------------------------------------------------------------------
+/// 所有的 columns 的名称
+///
+/// 生成：
+/// .unit-1, .unit-1--md, .unit-1--lg, .unit-1--xl,
+/// ...
+/// .unit-20, .unit-20--md, .unit-20--lg, .unit-20--xl,
+/// .sixth-1, .sixth-1--md, .sixth-1--lg, .sixth-1--xl,
+/// ...
+/// .sixth-6, .sixth-6--md, .sixth-6--lg, .sixth-6--xl
+@function all-columns-list(
+  $keys: $layout-breakpoints
+) {
+  $columns: '';
+
+  // 20列系列
+  @for $i from 1 through 20 {
+    $columns: "#{$columns}.unit-#{$i},";
+
+    @each $key, $width in $keys {
+      $columns: "#{$columns}.unit-#{$i}--#{$key},";
+    }
+  }
+
+  // 6列系列
+  @for $i from 1 through 6 {
+    $columns: "#{$columns}.sixth-#{$i},";
+
+    @each $key, $width in $keys {
+      $columns: "#{$columns}.sixth-#{$i}--#{$key},";
+    }
+  }
+
+  // 返回
+  @return $columns;
+}
+
+
+/// -----------------------------------------------------------------------
+/// 20列的宽度，无gutter
 ///
 /// 生成：
 /// unit-1 { width:  5% }  或 unit-1--md { width:  5%} 等等
@@ -32,7 +71,8 @@
 }
 
 
-/// 6列的宽度，不考虑gutter
+/// -----------------------------------------------------------------------
+/// 6列的宽度，无gutter
 ///
 /// 生成：
 /// sixth-1 { width: 16.66666% }  或 sixth-1--md { width: 16.66666%} 等等
