@@ -102,6 +102,8 @@ $grid-columns: 12 !default;
     padding-left:  ($grid-gutter-width / 2);
     padding-right: ($grid-gutter-width / 2);
     float: left;
+    overflow: hidden;
+    width: 100%;
   }
 }
 
@@ -116,16 +118,16 @@ $grid-columns: 12 !default;
 /// 生成：
 ///
 /// 如果 $name == default
-/// grid
-/// grid-2-1 {width:}
-/// grid-3-1 {width:} grid-3-2 {}
-/// grid-4-1 {width:} grid-4-2 {} grid-4-3 {}
+/// grid-2-1 {width:} grid-2-2 {}
+/// grid-3-1 {width:} grid-3-2 {} grid-3-3 {}
+/// grid-4-1 {width:} grid-4-2 {} grid-4-3 {} grid-4-4 {}
 ///
 /// 如果 $name == md
-/// grid--md
-/// grid-2-1--md {width:}
-/// grid-3-1--md {width:} grid-3-2--md {}
-/// grid-4-1--md {width:} grid-4-2--md {} grid-4-3--md {}
+/// grid-2-1--md {width:} grid-2-2--md {}
+/// grid-3-1--md {width:} grid-3-2--md {} grid-3-3--md {}
+/// grid-4-1--md {width:} grid-4-2--md {} grid-4-3--md {} grid-4-4--md {}
+///
+/// 注意：类似 grid-4-4 这种100%的宽度，也可以省略不写，因为.col默认就是100%宽度
 
 @mixin make-grid($name, $list) {
   $key: "--#{$name}";
@@ -142,5 +144,123 @@ $grid-columns: 12 !default;
   }
 }
 
-// 用媒体查询生成网格
-@import "./_media_query.scss";
+/// 生成对应的push
+///
+/// 生成：
+///
+/// 如果 $name == default
+/// push
+/// push-2-1 {left:}
+/// push-3-1 {left:} push-3-2 {}
+/// push-4-1 {left:} push-4-2 {} push-4-3 {}
+///
+/// 如果 $name == md
+/// push--md
+/// push-2-1--md {left:}
+/// push-3-1--md {left:} push-3-2--md {}
+/// push-4-1--md {left:} push-4-2--md {} push-4-3--md {}
+///
+/// 注意：最多直到 push-4-3, 没有 push-4-4 这种
+
+@mixin make-push($name, $list) {
+  $key: "--#{$name}";
+  @if $name == default {
+    $key: "";
+  }
+  @each $columns in $list {
+    @for $i from 1 to $columns {
+      $class: ".push-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        left: percentage($i / $columns);
+      }
+    }
+  }
+}
+
+/// 生成对应的pull
+///
+/// 生成：
+///
+/// 如果 $name == default
+/// pull
+/// pull-2-1 {right:}
+/// pull-3-1 {right:} pull-3-2 {}
+/// pull-4-1 {right:} pull-4-2 {} pull-4-3 {}
+///
+/// 如果 $name == md
+/// pull--md
+/// pull-2-1--md {right:}
+/// pull-3-1--md {right:} pull-3-2--md {}
+/// pull-4-1--md {right:} pull-4-2--md {} pull-4-3--md {}
+///
+/// 注意：最多直到 pull-4-3, 没有 pull-4-4 这种
+
+@mixin make-pull($name, $list) {
+  $key: "--#{$name}";
+  @if $name == default {
+    $key: "";
+  }
+  @each $columns in $list {
+    @for $i from 1 to $columns {
+      $class: ".pull-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        right: percentage($i / $columns);
+      }
+    }
+  }
+}
+
+/// 生成对应的offset
+///
+/// 生成：
+///
+/// 如果 $name == default
+/// offset
+/// offset-2-1 {margin-left:}
+/// offset-3-1 {margin-left:} offset-3-2 {}
+/// offset-4-1 {margin-left:} offset-4-2 {} offset-4-3 {}
+///
+/// 如果 $name == md
+/// offset--md
+/// offset-2-1--md {margin-left:}
+/// offset-3-1--md {margin-left:} offset-3-2--md {}
+/// offset-4-1--md {margin-left:} offset-4-2--md {} offset-4-3--md {}
+///
+/// 注意：最多直到 offset-4-3, 没有 offset-4-4 这种
+
+@mixin make-offset($name, $list) {
+  $key: "--#{$name}";
+  @if $name == default {
+    $key: "";
+  }
+  @each $columns in $list {
+    @for $i from 1 to $columns {
+      $class: ".offset-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        margin-left: percentage($i / $columns);
+      }
+    }
+  }
+}
+
+/// 用媒体查询生成网格
+
+/// 默认screen
+@media screen {
+  .grid {width: 100%}
+  @include make-grid(default, $grid-list);
+  @include make-push(default, $grid-list);
+  @include make-pull(default, $grid-list);
+  @include make-offset(default, $grid-list);
+}
+
+/// 依次设置每种screen类型
+@each $key, $width in $layout-breakpoints {
+  @media screen and (min-width: $width) {
+    @include make-grid($key, $grid-list);
+    @include make-push($key, $grid-list);
+    @include make-pull($key, $grid-list);
+    @include make-offset($key, $grid-list);
+  }
+}
+
