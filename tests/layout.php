@@ -45,7 +45,7 @@
 EOL;
 
     echo <<<EOL
-      <div class="container gutter">
+      <div class="container">
 EOL;
     for ($i = 1; $i < $columns; $i++) {
       $rest = $columns - $i;
@@ -77,9 +77,9 @@ EOL;
 
 <h2>Gutter</h2>
 <?php
-  $gutter_list = ['', 'gutter', 'gutter-x', 'gutter-xx'];
+  $gutter_list = ['nogutter', '', 'gutter-x', 'gutter-xx'];
   foreach ($gutter_list as $gutter) {
-    $gutter_text = ($gutter) ? $gutter : '无gutter';
+    $gutter_text = ($gutter) ? $gutter : '(默认)';
     echo <<<EOL
       <h3>{$gutter_text}</h3>
       <div class="container {$gutter}">
@@ -104,7 +104,7 @@ EOL;
 ?>
 
   <h2>响应式</h2>
-  <div class="container gutter">
+  <div class="container">
     <div class="row">
       <div class="col  grid-4-1--md grid-2-1--lg">
         <div class="box">grid-4-1--md <br> grid-2-1--lg</div>
@@ -117,7 +117,7 @@ EOL;
 
   <h2>Push 和 Pull</h2>
 
-  <div class="container gutter">
+  <div class="container">
     <div class="row">
       <div class="col grid-6-1">
         <div class="box">A <br> grid-6-1 </div>

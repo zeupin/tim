@@ -12,16 +12,15 @@
   overflow: hidden;
 
   // gutter设置开始
-  padding-left:  0;
-  padding-right: 0;
   @each $key, $gutter in $gutter-list {
-    $gutter-class: ".gutter-#{$key}";
     @if $key == default {
-      $gutter-class: ".gutter";
-    }
-    &#{$gutter-class} {
-      padding-left:  ($gutter / -2);
-      padding-right: ($gutter / -2);
+        padding-left:  ($gutter / -2);
+        padding-right: ($gutter / -2);
+    } @else {
+      &.#{$key} {
+        padding-left:  ($gutter / -2);
+        padding-right: ($gutter / -2);
+      }
     }
   }
   // gutter设置结束
@@ -37,16 +36,15 @@
   $gutter-list: $layout-gutter-list
 ){
   // gutter设置开始
-  margin-left:  0;
-  margin-right: 0;
   @each $key, $gutter in $gutter-list {
-    $gutter-class: ".gutter-#{$key}";
     @if $key == default {
-      $gutter-class: ".gutter";
-    }
-    #{$gutter-class} & {
-      margin-left: ($gutter / -2);
-      margin-right: ($gutter / -2);
+        margin-left: ($gutter / -2);
+        margin-right: ($gutter / -2);
+    } @else {
+      .#{$key} & {
+        margin-left: ($gutter / -2);
+        margin-right: ($gutter / -2);
+      }
     }
   }
   // gutter设置结束
@@ -68,16 +66,15 @@
   width: 100%;
 
   // gutter设置开始
-  padding-left:  0;
-  padding-right: 0;
   @each $key, $gutter in $gutter-list {
-    $gutter-class: ".gutter-#{$key}";
     @if $key == default {
-      $gutter-class: ".gutter";
-    }
-    #{$gutter-class} & {
-      padding-left:  ($gutter / 2);
-      padding-right: ($gutter / 2);
+        padding-left:  ($gutter / 2);
+        padding-right: ($gutter / 2);
+    } @else {
+      .#{$key} & {
+        padding-left:  ($gutter / 2);
+        padding-right: ($gutter / 2);
+      }
     }
   }
   // gutter设置结束
