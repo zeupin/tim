@@ -20,45 +20,16 @@
 /// Container
 /// -----------------------------------------------------------------------
 
-/// .container居中
-///
-/// @param {em} $gutter 两列之间的间距
-
-@mixin container-fixed(
-  $gutter-list: $layout-gutter-list
-){
-  margin-right: auto;
-  margin-left: auto;
-  overflow: hidden;
-
-  // gutter设置开始
-  padding-left:  0;
-  padding-right: 0;
-  @each $key, $gutter in $gutter-list {
-    $gutter-class: ".gutter-#{$key}";
-    @if $key == default {
-      $gutter-class: ".gutter";
-    }
-    &#{$gutter-class} {
-      padding-left:  ($gutter / -2);
-      padding-right: ($gutter / -2);
-    }
-  }
-  // gutter设置结束
-
-  @include clearfix;
-}
-
 /// container-fluid 是100%宽度的container
 
 .container-fluid {
-  @include container-fixed;
+  @include layout-container-common;
 }
 
 /// container 的宽度
 
 .container {
-  @include container-fixed;
+  @include layout-container-common;
 
   // 依次设置每种screen
   @each $key, $width in $layout-breakpoints {
@@ -73,219 +44,39 @@
 /// Row
 /// -----------------------------------------------------------------------
 
-/// 生成 row
-@mixin make-row(
-  $gutter-list: $layout-gutter-list
-){
-  // gutter设置开始
-  margin-left:  0;
-  margin-right: 0;
-  @each $key, $gutter in $gutter-list {
-    $gutter-class: ".gutter-#{$key}";
-    @if $key == default {
-      $gutter-class: ".gutter";
-    }
-    #{$gutter-class} & {
-      margin-left: ($gutter / -2);
-      margin-right: ($gutter / -2);
-    }
-  }
-  // gutter设置结束
-
-  @include clearfix;
-}
-
-/// row
 .row {
-  @include make-row;
+  @include layout-make-row;
 }
 
 
 /// -----------------------------------------------------------------------
 /// Col
 /// -----------------------------------------------------------------------
-
-@mixin make-col(
-  $gutter-list: $layout-gutter-list
-) {
-  .col {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    overflow: hidden;
-    width: 100%;
-
-    // gutter设置开始
-    padding-left:  0;
-    padding-right: 0;
-    @each $key, $gutter in $gutter-list {
-      $gutter-class: ".gutter-#{$key}";
-      @if $key == default {
-        $gutter-class: ".gutter";
-      }
-      #{$gutter-class} & {
-        padding-left:  ($gutter / 2);
-        padding-right: ($gutter / 2);
-      }
-    }
-    // gutter设置结束
-  }
+.col {
+  @include layout-make-col;
 }
-
-@include make-col;
 
 /// -----------------------------------------------------------------------
 /// Grid
 /// -----------------------------------------------------------------------
 
-/// 生成对应的grid宽度值
-///
-/// 生成：
-///
-/// 如果 $name == default
-/// grid-2-1 {width:} grid-2-2 {}
-/// grid-3-1 {width:} grid-3-2 {} grid-3-3 {}
-/// grid-4-1 {width:} grid-4-2 {} grid-4-3 {} grid-4-4 {}
-///
-/// 如果 $name == md
-/// grid-2-1--md {width:} grid-2-2--md {}
-/// grid-3-1--md {width:} grid-3-2--md {} grid-3-3--md {}
-/// grid-4-1--md {width:} grid-4-2--md {} grid-4-3--md {} grid-4-4--md {}
-///
-/// 注意：类似 grid-4-4 这种100%的宽度，也可以省略不写，因为.col默认就是100%宽度
-
-@mixin make-grid($name, $list) {
-  $key: "--#{$name}";
-  @if $name == default {
-    $key: "";
-  }
-  @each $columns in $list {
-    @for $i from 1 through $columns {
-      $class: ".grid-#{$columns}-#{$i}#{$key}";
-      #{$class} {
-        width: percentage($i / $columns);
-      }
-    }
-  }
-}
-
-/// 生成对应的push
-///
-/// 生成：
-///
-/// 如果 $name == default
-/// push
-/// push-2-1 {left:}
-/// push-3-1 {left:} push-3-2 {}
-/// push-4-1 {left:} push-4-2 {} push-4-3 {}
-///
-/// 如果 $name == md
-/// push--md
-/// push-2-1--md {left:}
-/// push-3-1--md {left:} push-3-2--md {}
-/// push-4-1--md {left:} push-4-2--md {} push-4-3--md {}
-///
-/// 注意：最多直到 push-4-3, 没有 push-4-4 这种
-
-@mixin make-push($name, $list) {
-  $key: "--#{$name}";
-  @if $name == default {
-    $key: "";
-  }
-  @each $columns in $list {
-    @for $i from 1 to $columns {
-      $class: ".push-#{$columns}-#{$i}#{$key}";
-      #{$class} {
-        left: percentage($i / $columns);
-      }
-    }
-  }
-}
-
-/// 生成对应的pull
-///
-/// 生成：
-///
-/// 如果 $name == default
-/// pull
-/// pull-2-1 {right:}
-/// pull-3-1 {right:} pull-3-2 {}
-/// pull-4-1 {right:} pull-4-2 {} pull-4-3 {}
-///
-/// 如果 $name == md
-/// pull--md
-/// pull-2-1--md {right:}
-/// pull-3-1--md {right:} pull-3-2--md {}
-/// pull-4-1--md {right:} pull-4-2--md {} pull-4-3--md {}
-///
-/// 注意：最多直到 pull-4-3, 没有 pull-4-4 这种
-
-@mixin make-pull($name, $list) {
-  $key: "--#{$name}";
-  @if $name == default {
-    $key: "";
-  }
-  @each $columns in $list {
-    @for $i from 1 to $columns {
-      $class: ".pull-#{$columns}-#{$i}#{$key}";
-      #{$class} {
-        right: percentage($i / $columns);
-      }
-    }
-  }
-}
-
-/// 生成对应的offset
-///
-/// 生成：
-///
-/// 如果 $name == default
-/// offset
-/// offset-2-1 {margin-left:}
-/// offset-3-1 {margin-left:} offset-3-2 {}
-/// offset-4-1 {margin-left:} offset-4-2 {} offset-4-3 {}
-///
-/// 如果 $name == md
-/// offset--md
-/// offset-2-1--md {margin-left:}
-/// offset-3-1--md {margin-left:} offset-3-2--md {}
-/// offset-4-1--md {margin-left:} offset-4-2--md {} offset-4-3--md {}
-///
-/// 注意：最多直到 offset-4-3, 没有 offset-4-4 这种
-
-@mixin make-offset($name, $list) {
-  $key: "--#{$name}";
-  @if $name == default {
-    $key: "";
-  }
-  @each $columns in $list {
-    @for $i from 1 to $columns {
-      $class: ".offset-#{$columns}-#{$i}#{$key}";
-      #{$class} {
-        margin-left: percentage($i / $columns);
-      }
-    }
-  }
-}
-
 /// 用媒体查询生成网格
 
 /// 默认screen
 @media screen {
-  .grid {width: 100%}
-  @include make-grid(default, $layout-grid-list);
-  @include make-push(default, $layout-grid-list);
-  @include make-pull(default, $layout-grid-list);
-  @include make-offset(default, $layout-grid-list);
+  @include layout-make-grid(default, $layout-columns-list);
+  @include layout-make-push(default, $layout-columns-list);
+  @include layout-make-pull(default, $layout-columns-list);
+  @include layout-make-offset(default, $layout-columns-list);
 }
 
 /// 依次设置每种screen类型
 @each $key, $width in $layout-breakpoints {
   @media screen and (min-width: $width) {
-    @include make-grid($key, $layout-grid-list);
-    @include make-push($key, $layout-grid-list);
-    @include make-pull($key, $layout-grid-list);
-    @include make-offset($key, $layout-grid-list);
+    @include layout-make-grid($key, $layout-columns-list);
+    @include layout-make-push($key, $layout-columns-list);
+    @include layout-make-pull($key, $layout-columns-list);
+    @include layout-make-offset($key, $layout-columns-list);
   }
 }
 

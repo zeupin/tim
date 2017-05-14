@@ -1,36 +1,255 @@
-/// -----------------------------------------------------------------------
-/// 所有的 columns 的名称
+/// ---------------------------------------------------------------------------
+/// container 公用样式
+/// ---------------------------------------------------------------------------
+///
+/// @param {list} $gutter-list 列间距的列表
+
+@mixin layout-container-common(
+  $gutter-list: $layout-gutter-list
+){
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+
+  // gutter设置开始
+  padding-left:  0;
+  padding-right: 0;
+  @each $key, $gutter in $gutter-list {
+    $gutter-class: ".gutter-#{$key}";
+    @if $key == default {
+      $gutter-class: ".gutter";
+    }
+    &#{$gutter-class} {
+      padding-left:  ($gutter / -2);
+      padding-right: ($gutter / -2);
+    }
+  }
+  // gutter设置结束
+
+  @include clearfix;
+}
+
+
+/// ---------------------------------------------------------------------------
+/// 生成 row
+/// ---------------------------------------------------------------------------
+@mixin layout-make-row(
+  $gutter-list: $layout-gutter-list
+){
+  // gutter设置开始
+  margin-left:  0;
+  margin-right: 0;
+  @each $key, $gutter in $gutter-list {
+    $gutter-class: ".gutter-#{$key}";
+    @if $key == default {
+      $gutter-class: ".gutter";
+    }
+    #{$gutter-class} & {
+      margin-left: ($gutter / -2);
+      margin-right: ($gutter / -2);
+    }
+  }
+  // gutter设置结束
+
+  @include clearfix;
+}
+
+
+/// ---------------------------------------------------------------------------
+/// 生成 col
+/// ---------------------------------------------------------------------------
+@mixin layout-make-col(
+  $gutter-list: $layout-gutter-list
+){
+  position: relative;
+  min-height: 1px;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+
+  // gutter设置开始
+  padding-left:  0;
+  padding-right: 0;
+  @each $key, $gutter in $gutter-list {
+    $gutter-class: ".gutter-#{$key}";
+    @if $key == default {
+      $gutter-class: ".gutter";
+    }
+    #{$gutter-class} & {
+      padding-left:  ($gutter / 2);
+      padding-right: ($gutter / 2);
+    }
+  }
+  // gutter设置结束
+}
+
+
+/// ---------------------------------------------------------------------------
+/// layout-make-grid，生成对应的grid宽度值
+/// ---------------------------------------------------------------------------
+///
+/// @param $screen 一般为default，md, lg, xl
+/// @param $columns-list 默认为 $layout-columns-list，要生成的列数列表
 ///
 /// 生成：
-/// .unit-1, .unit-1--md, .unit-1--lg, .unit-1--xl,
-/// ...
-/// .unit-20, .unit-20--md, .unit-20--lg, .unit-20--xl,
-/// .sixth-1, .sixth-1--md, .sixth-1--lg, .sixth-1--xl,
-/// ...
-/// .sixth-6, .sixth-6--md, .sixth-6--lg, .sixth-6--xl
-@function all-columns-list(
-  $keys: $layout-breakpoints
-) {
-  $columns: '';
+///
+/// 如果 $screen == default
+/// grid-2-1 {width:} grid-2-2 {}
+/// grid-3-1 {width:} grid-3-2 {} grid-3-3 {}
+/// grid-4-1 {width:} grid-4-2 {} grid-4-3 {} grid-4-4 {}
+///
+/// 如果 $screen == md
+/// grid-2-1--md {width:} grid-2-2--md {}
+/// grid-3-1--md {width:} grid-3-2--md {} grid-3-3--md {}
+/// grid-4-1--md {width:} grid-4-2--md {} grid-4-3--md {} grid-4-4--md {}
+///
+/// 注意：类似 grid-4-4 这种100%的宽度，可以省略不写，也可以仅仅设置为 grid。
+/// 因为已经设置了.col的默认宽度为100%。
 
-  // 20列系列
-  @for $i from 1 through 20 {
-    $columns: "#{$columns}.unit-#{$i},";
-
-    @each $key, $width in $keys {
-      $columns: "#{$columns}.unit-#{$i}--#{$key},";
+@mixin layout-make-grid(
+  $screen,
+  $columns-list: $layout-columns-list
+){
+  $key: "--#{$screen}";
+  @if $screen == default {
+    $key: "";
+  }
+  $class: ".grid#{$key}";
+  #{$class} {
+    width: 100%;
+  }
+  @each $columns in $columns-list {
+    @for $i from 1 through $columns {
+      $class: ".grid-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        width: percentage($i / $columns);
+      }
     }
   }
+}
 
-  // 6列系列
-  @for $i from 1 through 6 {
-    $columns: "#{$columns}.sixth-#{$i},";
 
-    @each $key, $width in $keys {
-      $columns: "#{$columns}.sixth-#{$i}--#{$key},";
+/// ---------------------------------------------------------------------------
+/// layout-make-push，生成对应的push
+/// ---------------------------------------------------------------------------
+///
+/// @param $screen 一般为default，md, lg, xl
+/// @param $columns-list 默认为 $layout-columns-list，要生成的列数列表
+///
+/// 生成：
+///
+/// 如果 $screen == default
+/// push
+/// push-2-1 {left:}
+/// push-3-1 {left:} push-3-2 {}
+/// push-4-1 {left:} push-4-2 {} push-4-3 {}
+///
+/// 如果 $screen == md
+/// push--md
+/// push-2-1--md {left:}
+/// push-3-1--md {left:} push-3-2--md {}
+/// push-4-1--md {left:} push-4-2--md {} push-4-3--md {}
+///
+/// 注意：最多只到 push-4-3, 没有 push-4-4 这种
+
+@mixin layout-make-push(
+  $screen,
+  $columns-list: $layout-columns-list
+){
+  $key: "--#{$screen}";
+  @if $screen == default {
+    $key: "";
+  }
+  @each $columns in $columns-list {
+    @for $i from 1 to $columns {
+      $class: ".push-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        left: percentage($i / $columns);
+      }
     }
   }
+}
 
-  // 返回
-  @return $columns;
+
+/// ---------------------------------------------------------------------------
+/// layout-make-pull，生成对应的pull\
+/// ---------------------------------------------------------------------------
+///
+/// @param $screen 一般为default，md, lg, xl
+/// @param $columns-list 默认为 $layout-columns-list，要生成的列数列表
+///
+/// 生成：
+///
+/// 如果 $screen == default
+/// pull
+/// pull-2-1 {right:}
+/// pull-3-1 {right:} pull-3-2 {}
+/// pull-4-1 {right:} pull-4-2 {} pull-4-3 {}
+///
+/// 如果 $screen == md
+/// pull--md
+/// pull-2-1--md {right:}
+/// pull-3-1--md {right:} pull-3-2--md {}
+/// pull-4-1--md {right:} pull-4-2--md {} pull-4-3--md {}
+///
+/// 注意：最多只到 pull-4-3, 没有 pull-4-4 这种
+
+@mixin layout-make-pull(
+  $screen,
+  $columns-list: $layout-columns-list
+){
+  $key: "--#{$screen}";
+  @if $screen == default {
+    $key: "";
+  }
+  @each $columns in $columns-list {
+    @for $i from 1 to $columns {
+      $class: ".pull-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        right: percentage($i / $columns);
+      }
+    }
+  }
+}
+
+
+/// ---------------------------------------------------------------------------
+/// layout-make-offset，生成对应的offset
+/// ---------------------------------------------------------------------------
+///
+/// @param $screen 一般为default，md, lg, xl
+/// @param $columns-list 默认为 $layout-columns-list，要生成的列数列表
+///
+/// 生成：
+///
+/// 如果 $screen == default
+/// offset
+/// offset-2-1 {margin-left:}
+/// offset-3-1 {margin-left:} offset-3-2 {}
+/// offset-4-1 {margin-left:} offset-4-2 {} offset-4-3 {}
+///
+/// 如果 $screen == md
+/// offset--md
+/// offset-2-1--md {margin-left:}
+/// offset-3-1--md {margin-left:} offset-3-2--md {}
+/// offset-4-1--md {margin-left:} offset-4-2--md {} offset-4-3--md {}
+///
+/// 注意：最多只到 offset-4-3, 没有 offset-4-4 这种
+
+@mixin layout-make-offset(
+  $screen,
+  $columns-list: $layout-columns-list
+){
+  $key: "--#{$screen}";
+  @if $screen == default {
+    $key: "";
+  }
+  @each $columns in $columns-list {
+    @for $i from 1 to $columns {
+      $class: ".offset-#{$columns}-#{$i}#{$key}";
+      #{$class} {
+        margin-left: percentage($i / $columns);
+      }
+    }
+  }
 }

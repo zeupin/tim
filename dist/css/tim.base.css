@@ -426,7 +426,8 @@ td, th { padding: 0; }
   .offset-20-17 { margin-left: 85%; }
   .offset-20-18 { margin-left: 90%; }
   .offset-20-19 { margin-left: 95%; } }
-@media screen and (min-width: 64em) { .grid-2-1--md { width: 50%; }
+@media screen and (min-width: 64em) { .grid--md { width: 100%; }
+  .grid-2-1--md { width: 50%; }
   .grid-2-2--md { width: 100%; }
   .grid-3-1--md { width: 33.33333%; }
   .grid-3-2--md { width: 66.66667%; }
@@ -737,7 +738,8 @@ td, th { padding: 0; }
   .offset-20-17--md { margin-left: 85%; }
   .offset-20-18--md { margin-left: 90%; }
   .offset-20-19--md { margin-left: 95%; } }
-@media screen and (min-width: 75em) { .grid-2-1--lg { width: 50%; }
+@media screen and (min-width: 75em) { .grid--lg { width: 100%; }
+  .grid-2-1--lg { width: 50%; }
   .grid-2-2--lg { width: 100%; }
   .grid-3-1--lg { width: 33.33333%; }
   .grid-3-2--lg { width: 66.66667%; }
@@ -1048,7 +1050,8 @@ td, th { padding: 0; }
   .offset-20-17--lg { margin-left: 85%; }
   .offset-20-18--lg { margin-left: 90%; }
   .offset-20-19--lg { margin-left: 95%; } }
-@media screen and (min-width: 87.5em) { .grid-2-1--xl { width: 50%; }
+@media screen and (min-width: 87.5em) { .grid--xl { width: 100%; }
+  .grid-2-1--xl { width: 50%; }
   .grid-2-2--xl { width: 100%; }
   .grid-3-1--xl { width: 33.33333%; }
   .grid-3-2--xl { width: 66.66667%; }

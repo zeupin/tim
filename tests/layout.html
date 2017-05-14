@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
@@ -11,18 +11,12 @@
     h2 {
       margin: 1em 0;
       text-align: center;
+      background-color: gray;
     }
 
-    .color-b {
-      background-color: #a23454;
-    }
-
-    .color-a {
-      background-color: #434478;
-    }
-
-    .color-c {
-      background-color: #a2ddee;
+    h3 {
+      margin: 1em 0;
+      text-align: center;
     }
 
     .row {
@@ -32,19 +26,370 @@
 
     .box {
       white-space: nowrap;
-      min-height: 1.2em;
+      line-height: 2em;
       width: 100%;
-      border: 1px solid gray;
+      background-color: #eeeeee;
     }
   </style>
 </head>
 
 <body>
-
-  <h2>10列网格</h2>
-
+  <h2>网格系统</h2>
+  <h3>2列网格</h3>
   <div class="container gutter">
-    <div class="row ">
+    <div class="row">
+      <div class="col grid-2-1">
+        <div class="box">grid-2-1</div>
+      </div>
+      <div class="col grid-2-1">
+        <div class="box">grid-2-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>3列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-3-1">
+        <div class="box">grid-3-1</div>
+      </div>
+      <div class="col grid-3-2">
+        <div class="box">grid-3-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-3-2">
+        <div class="box">grid-3-2</div>
+      </div>
+      <div class="col grid-3-1">
+        <div class="box">grid-3-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>4列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-3">
+        <div class="box">grid-4-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-4-2">
+        <div class="box">grid-4-2</div>
+      </div>
+      <div class="col grid-4-2">
+        <div class="box">grid-4-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-4-3">
+        <div class="box">grid-4-3</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>5列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-5-1">
+        <div class="box">grid-5-1</div>
+      </div>
+      <div class="col grid-5-4">
+        <div class="box">grid-5-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-5-2">
+        <div class="box">grid-5-2</div>
+      </div>
+      <div class="col grid-5-3">
+        <div class="box">grid-5-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-5-3">
+        <div class="box">grid-5-3</div>
+      </div>
+      <div class="col grid-5-2">
+        <div class="box">grid-5-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-5-4">
+        <div class="box">grid-5-4</div>
+      </div>
+      <div class="col grid-5-1">
+        <div class="box">grid-5-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>6列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-6-1">
+        <div class="box">grid-6-1</div>
+      </div>
+      <div class="col grid-6-5">
+        <div class="box">grid-6-5</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-2">
+        <div class="box">grid-6-2</div>
+      </div>
+      <div class="col grid-6-4">
+        <div class="box">grid-6-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-3">
+        <div class="box">grid-6-3</div>
+      </div>
+      <div class="col grid-6-3">
+        <div class="box">grid-6-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-4">
+        <div class="box">grid-6-4</div>
+      </div>
+      <div class="col grid-6-2">
+        <div class="box">grid-6-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-6-5">
+        <div class="box">grid-6-5</div>
+      </div>
+      <div class="col grid-6-1">
+        <div class="box">grid-6-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>7列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-7-1">
+        <div class="box">grid-7-1</div>
+      </div>
+      <div class="col grid-7-6">
+        <div class="box">grid-7-6</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-7-2">
+        <div class="box">grid-7-2</div>
+      </div>
+      <div class="col grid-7-5">
+        <div class="box">grid-7-5</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-7-3">
+        <div class="box">grid-7-3</div>
+      </div>
+      <div class="col grid-7-4">
+        <div class="box">grid-7-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-7-4">
+        <div class="box">grid-7-4</div>
+      </div>
+      <div class="col grid-7-3">
+        <div class="box">grid-7-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-7-5">
+        <div class="box">grid-7-5</div>
+      </div>
+      <div class="col grid-7-2">
+        <div class="box">grid-7-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-7-6">
+        <div class="box">grid-7-6</div>
+      </div>
+      <div class="col grid-7-1">
+        <div class="box">grid-7-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>8列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-8-1">
+        <div class="box">grid-8-1</div>
+      </div>
+      <div class="col grid-8-7">
+        <div class="box">grid-8-7</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-8-2">
+        <div class="box">grid-8-2</div>
+      </div>
+      <div class="col grid-8-6">
+        <div class="box">grid-8-6</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-8-3">
+        <div class="box">grid-8-3</div>
+      </div>
+      <div class="col grid-8-5">
+        <div class="box">grid-8-5</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-8-4">
+        <div class="box">grid-8-4</div>
+      </div>
+      <div class="col grid-8-4">
+        <div class="box">grid-8-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-8-5">
+        <div class="box">grid-8-5</div>
+      </div>
+      <div class="col grid-8-3">
+        <div class="box">grid-8-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-8-6">
+        <div class="box">grid-8-6</div>
+      </div>
+      <div class="col grid-8-2">
+        <div class="box">grid-8-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-8-7">
+        <div class="box">grid-8-7</div>
+      </div>
+      <div class="col grid-8-1">
+        <div class="box">grid-8-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>9列网格</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-9-1">
+        <div class="box">grid-9-1</div>
+      </div>
+      <div class="col grid-9-8">
+        <div class="box">grid-9-8</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-2">
+        <div class="box">grid-9-2</div>
+      </div>
+      <div class="col grid-9-7">
+        <div class="box">grid-9-7</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-3">
+        <div class="box">grid-9-3</div>
+      </div>
+      <div class="col grid-9-6">
+        <div class="box">grid-9-6</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-4">
+        <div class="box">grid-9-4</div>
+      </div>
+      <div class="col grid-9-5">
+        <div class="box">grid-9-5</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-5">
+        <div class="box">grid-9-5</div>
+      </div>
+      <div class="col grid-9-4">
+        <div class="box">grid-9-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-6">
+        <div class="box">grid-9-6</div>
+      </div>
+      <div class="col grid-9-3">
+        <div class="box">grid-9-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-7">
+        <div class="box">grid-9-7</div>
+      </div>
+      <div class="col grid-9-2">
+        <div class="box">grid-9-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-9-8">
+        <div class="box">grid-9-8</div>
+      </div>
+      <div class="col grid-9-1">
+        <div class="box">grid-9-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h3>10列网格</h3>
+  <div class="container gutter">
+    <div class="row">
       <div class="col grid-10-1">
         <div class="box">grid-10-1</div>
       </div>
@@ -118,63 +463,376 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="box">grid-10-10</div>
+        <div class="box">grid</div>
       </div>
     </div>
   </div>
-
-  <h2>6列网格</h2>
-
-  <div class="container">
+  <h3>12列网格</h3>
+  <div class="container gutter">
     <div class="row">
-      <div class="col grid-6-1 color-a">grid-6-1</div>
-      <div class="col grid-6-5 color-b">grid-6-5</div>
+      <div class="col grid-12-1">
+        <div class="box">grid-12-1</div>
+      </div>
+      <div class="col grid-12-11">
+        <div class="box">grid-12-11</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-2 color-a">grid-6-2</div>
-      <div class="col grid-6-4 color-b">grid-6-4</div>
+      <div class="col grid-12-2">
+        <div class="box">grid-12-2</div>
+      </div>
+      <div class="col grid-12-10">
+        <div class="box">grid-12-10</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-3 color-a">grid-6-3</div>
-      <div class="col grid-6-3 color-b">grid-6-3</div>
+      <div class="col grid-12-3">
+        <div class="box">grid-12-3</div>
+      </div>
+      <div class="col grid-12-9">
+        <div class="box">grid-12-9</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-4 color-a">grid-6-4</div>
-      <div class="col grid-6-2 color-b">grid-6-2</div>
+      <div class="col grid-12-4">
+        <div class="box">grid-12-4</div>
+      </div>
+      <div class="col grid-12-8">
+        <div class="box">grid-12-8</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-5 color-a">grid-6-5</div>
-      <div class="col grid-6-1 color-b">grid-6-1</div>
+      <div class="col grid-12-5">
+        <div class="box">grid-12-5</div>
+      </div>
+      <div class="col grid-12-7">
+        <div class="box">grid-12-7</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-6 color-a">grid-6-6</div>
+      <div class="col grid-12-6">
+        <div class="box">grid-12-6</div>
+      </div>
+      <div class="col grid-12-6">
+        <div class="box">grid-12-6</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-12-7">
+        <div class="box">grid-12-7</div>
+      </div>
+      <div class="col grid-12-5">
+        <div class="box">grid-12-5</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-12-8">
+        <div class="box">grid-12-8</div>
+      </div>
+      <div class="col grid-12-4">
+        <div class="box">grid-12-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-12-9">
+        <div class="box">grid-12-9</div>
+      </div>
+      <div class="col grid-12-3">
+        <div class="box">grid-12-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-12-10">
+        <div class="box">grid-12-10</div>
+      </div>
+      <div class="col grid-12-2">
+        <div class="box">grid-12-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-12-11">
+        <div class="box">grid-12-11</div>
+      </div>
+      <div class="col grid-12-1">
+        <div class="box">grid-12-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
     </div>
   </div>
-
-  <h2>响应式</h2>
-
-  <div class="container">
+  <h3>20列网格</h3>
+  <div class="container gutter">
     <div class="row">
-      <div class="col  grid-4-1--md grid-2-1--lg color-b">A</div>
-      <div class="col  grid-4-3--md grid-2-1--lg color-a">B</div>
+      <div class="col grid-20-1">
+        <div class="box">grid-20-1</div>
+      </div>
+      <div class="col grid-20-19">
+        <div class="box">grid-20-19</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-2">
+        <div class="box">grid-20-2</div>
+      </div>
+      <div class="col grid-20-18">
+        <div class="box">grid-20-18</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-3">
+        <div class="box">grid-20-3</div>
+      </div>
+      <div class="col grid-20-17">
+        <div class="box">grid-20-17</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-4">
+        <div class="box">grid-20-4</div>
+      </div>
+      <div class="col grid-20-16">
+        <div class="box">grid-20-16</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-5">
+        <div class="box">grid-20-5</div>
+      </div>
+      <div class="col grid-20-15">
+        <div class="box">grid-20-15</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-6">
+        <div class="box">grid-20-6</div>
+      </div>
+      <div class="col grid-20-14">
+        <div class="box">grid-20-14</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-7">
+        <div class="box">grid-20-7</div>
+      </div>
+      <div class="col grid-20-13">
+        <div class="box">grid-20-13</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-8">
+        <div class="box">grid-20-8</div>
+      </div>
+      <div class="col grid-20-12">
+        <div class="box">grid-20-12</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-9">
+        <div class="box">grid-20-9</div>
+      </div>
+      <div class="col grid-20-11">
+        <div class="box">grid-20-11</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-10">
+        <div class="box">grid-20-10</div>
+      </div>
+      <div class="col grid-20-10">
+        <div class="box">grid-20-10</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-11">
+        <div class="box">grid-20-11</div>
+      </div>
+      <div class="col grid-20-9">
+        <div class="box">grid-20-9</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-12">
+        <div class="box">grid-20-12</div>
+      </div>
+      <div class="col grid-20-8">
+        <div class="box">grid-20-8</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-13">
+        <div class="box">grid-20-13</div>
+      </div>
+      <div class="col grid-20-7">
+        <div class="box">grid-20-7</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-14">
+        <div class="box">grid-20-14</div>
+      </div>
+      <div class="col grid-20-6">
+        <div class="box">grid-20-6</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-15">
+        <div class="box">grid-20-15</div>
+      </div>
+      <div class="col grid-20-5">
+        <div class="box">grid-20-5</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-16">
+        <div class="box">grid-20-16</div>
+      </div>
+      <div class="col grid-20-4">
+        <div class="box">grid-20-4</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-17">
+        <div class="box">grid-20-17</div>
+      </div>
+      <div class="col grid-20-3">
+        <div class="box">grid-20-3</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-18">
+        <div class="box">grid-20-18</div>
+      </div>
+      <div class="col grid-20-2">
+        <div class="box">grid-20-2</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col grid-20-19">
+        <div class="box">grid-20-19</div>
+      </div>
+      <div class="col grid-20-1">
+        <div class="box">grid-20-1</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="box">grid</div>
+      </div>
+    </div>
+  </div>
+  <h2>Gutter</h2>
+  <h3>无gutter</h3>
+  <div class="container ">
+    <div class="row">
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+    </div>
+  </div>
+  <h3>gutter</h3>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+    </div>
+  </div>
+  <h3>gutter-x</h3>
+  <div class="container gutter-x">
+    <div class="row">
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+    </div>
+  </div>
+  <h3>gutter-xx</h3>
+  <div class="container gutter-xx">
+    <div class="row">
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+      <div class="col grid-4-1">
+        <div class="box">grid-4-1</div>
+      </div>
+    </div>
+  </div>
+  <h2>响应式</h2>
+  <div class="container gutter">
+    <div class="row">
+      <div class="col  grid-4-1--md grid-2-1--lg">
+        <div class="box">grid-4-1--md <br> grid-2-1--lg</div>
+      </div>
+      <div class="col  grid-4-3--md grid-2-1--lg">
+        <div class="box">grid-4-3--md <br> grid-2-1--lg</div>
+      </div>
     </div>
   </div>
 
   <h2>Push 和 Pull</h2>
 
-  <div class="container">
+  <div class="container gutter">
     <div class="row">
-      <div class="col grid-6-1 color-b">grid-6-1</div>
-      <div class="col grid-6-1 push-6-1 color-a">grid-6-1 <br> push-6-1</div>
+      <div class="col grid-6-1">
+        <div class="box">A <br> grid-6-1 </div>
+      </div>
+      <div class="col grid-6-1 push-6-1">
+        <div class="box">B <br> grid-6-1 <br> push-6-1</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-1 color-a">grid-6-1</div>
-      <div class="col grid-6-1 push-6-2 color-b">grid-6-1 <br> push-6-2</div>
+      <div class="col grid-6-1">
+        <div class="box">A <br> grid-6-1</div>
+      </div>
+      <div class="col grid-6-1 push-6-2">
+        <div class="box">B <br> grid-6-1 <br> push-6-2</div>
+      </div>
     </div>
     <div class="row">
-      <div class="col grid-6-1 color-b">A</div>
-      <div class="col grid-6-1 push-6-1 color-a">B <br> pull-6-1</div>
-      <div class="col grid-6-1 pull-6-1 color-c">C <br> push-6-1</div>
+      <div class="col grid-6-1">
+        <div class="box">A <br> grid-6-1 </div>
+      </div>
+      <div class="col grid-6-1 push-6-1">
+        <div class="box">B <br> grid-6-1 <br> pull-6-1</div>
+      </div>
+      <div class="col grid-6-1 pull-6-1">
+        <div class="box">C <br> grid-6-1 <br> push-6-1</div>
+      </div>
     </div>
   </div>
 
@@ -182,12 +840,17 @@
 
   <div class="container">
     <div class="row">
-      <div class="col grid-6-1 color-b">A</div>
-      <div class="col grid-6-1 offset-6-1 color-a">B <br> offset-6-1</div>
-      <div class="col grid-6-1 offset-6-1 color-c">C <br> offset-6-1</div>
+      <div class="col grid-6-1">
+        <div class="box">A <br> grid-6-1</div>
+      </div>
+      <div class="col grid-6-1 offset-6-1">
+        <div class="box">B <br> grid-6-1 <br> offset-6-1</div>
+      </div>
+      <div class="col grid-6-1 offset-6-1">
+        <div class="box">C <br> grid-6-1 <br> offset-6-1</div>
+      </div>
     </div>
   </div>
-
 </body>
 
 </html>
