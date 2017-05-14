@@ -77,7 +77,7 @@ EOL;
 
 <h2>Gutter</h2>
 <?php
-  $gutter_list = ['nogutter', '', 'gutter-x', 'gutter-xx'];
+  $gutter_list = ['nogutter', 'gutter-s', '', 'gutter-x', 'gutter-xx'];
   foreach ($gutter_list as $gutter) {
     $gutter_text = ($gutter) ? $gutter : '(默认)';
     echo <<<EOL
@@ -100,7 +100,6 @@ EOL;
       </div>
 EOL;
   }
-
 ?>
 
   <h2>响应式</h2>
