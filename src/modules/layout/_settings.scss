@@ -1,16 +1,16 @@
-/// 媒体查询的断点
+// 媒体查询的断点
 $layout-breakpoints: (
   md: 64em,    // 1024px
   lg: 75em,    // 1200px
   xl: 87.5em,  // 1400px
 ) !global;
 
-/// 网格列数列表
-/// 常用的有：2列,3列,4列,5列,6列,7列,8列,9列,10列,12列,20列
+// 网格列数列表
+// 常用的有：2列,3列,4列,5列,6列,7列,8列,9列,10列,12列,20列
 $layout-columns-list: 2 3 4 5 6 7 8 9 10 12 20;
 
-/// Gutter系列
-/// <div class="container gutter-xx"></div>
+// Gutter系列
+// <div class="container gutter-xx"></div>
 $layout-gutter-list: (
   default: 1.2%,          // 默认gutter宽度
   nogutter: 0,            // 不要列间距
