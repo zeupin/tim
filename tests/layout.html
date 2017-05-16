@@ -21,7 +21,10 @@
 
     .row {
       margin-top: 0.5em;
-      margin-bottom: 0.5em;
+    }
+    
+    .sameheight .col {
+      background-color: yellow;
     }
 
     .box {
@@ -868,6 +871,25 @@
       </div>
     </div>
   </div>
+  
+  <h2>等高列</h2>
+
+  <div class="container">
+    <div class="row sameheight">
+      <div class="col grid-3-1">
+        <div class="box">A</div>
+      </div>
+      <div class="col grid-3-1">
+        <div class="box">B <br> B</div>
+      </div>
+      <div class="col grid-3-1">
+        <div class="box">C <br> C <br> C</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
 </body>
 
 </html>
