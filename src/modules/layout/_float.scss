@@ -1,0 +1,14 @@
+// 左浮动
+.flaot-left {
+  float: left;
+}
+
+// 右浮动
+.float-right {
+  float: right;
+}
+
+// 清除浮动
+.clearfix {
+  @include clearfix();
+}
