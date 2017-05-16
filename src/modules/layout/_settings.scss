@@ -10,7 +10,10 @@ $layout-breakpoints: (
 $layout-columns-list: 2 3 4 5 6 7 8 9 10 12 20;
 
 // Gutter系列
-// <div class="container gutter-xx"></div>
+//
+// 用法：
+// <div class="container gutter-xx">
+// </div>
 $layout-gutter-list: (
   default: 1.2%,          // 默认gutter宽度
   nogutter: 0,            // 不要列间距
@@ -18,3 +21,7 @@ $layout-gutter-list: (
   gutter-x: 2%,           // 稍大一点的gutter
   gutter-xx: 4%,          // 更大一点的gutter
 );
+
+// 列之间的垂直分隔线
+$layout-vertical-divider-color: #eee !default;
+$layout-vertical-divider-width: 1px !default;
