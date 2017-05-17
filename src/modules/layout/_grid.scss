@@ -2,14 +2,14 @@
 // layout-make-grid-width，生成各种情况下的grid的宽度
 // ------------------------------------------------------------
 // 生成：
-// .gutter类型  .grid-总列数-列数--屏幕类型,
-// .gutter类型  .grid-总列数-列数--屏幕类型,
-// .gutter类型  .grid-总列数-列数--屏幕类型 {
+// .gutter类型  .w-总列数-列数--屏幕类型,
+// .gutter类型  .w-总列数-列数--屏幕类型,
+// .gutter类型  .w-总列数-列数--屏幕类型 {
 //   width: 50%;
 // }
-// .gutter类型  .grid-总列数-列数--屏幕类型,
-// .gutter类型  .grid-总列数-列数--屏幕类型,
-// .gutter类型  .grid-总列数-列数--屏幕类型 {
+// .gutter类型  .w-总列数-列数--屏幕类型,
+// .gutter类型  .w-总列数-列数--屏幕类型,
+// .gutter类型  .w-总列数-列数--屏幕类型 {
 //   width: 20%;
 // }
 //
@@ -38,7 +38,7 @@
     @each $columns in $columns-list {
       @for $i from 1 through $columns {
         // 对应的选择器selector
-        $selector: "#{$gutter} .grid-#{$columns}-#{$i}#{$screen-postfix}";
+        $selector: "#{$gutter} .w-#{$columns}-#{$i}#{$screen-postfix}";
         // 对应的宽度width
         $width: todo;
         @if ($i == $columns) {
@@ -208,16 +208,16 @@
 
 // 默认screen
 @media screen {
-  @include layout-make-grid-width(default, $layout-columns-list);
-  @include layout-make-grid-push(default, $layout-columns-list);
-  @include layout-make-grid-pull(default, $layout-columns-list);
-  @include layout-make-grid-offset(default, $layout-columns-list);
+  @include layout-make-grid-width(default);
+  @include layout-make-grid-push(default);
+  @include layout-make-grid-pull(default);
+  @include layout-make-grid-offset(default);
 }
 
 // 依次设置每种screen类型
 @each $screen, $width in $layout-breakpoints {
   @media screen and (min-width: $width) {
-    @include layout-make-grid-width($screen, $layout-columns-list);
+    @include layout-make-grid-width($screen);
     @include layout-make-grid-push($screen, $layout-columns-list);
     @include layout-make-grid-pull($screen, $layout-columns-list);
     @include layout-make-grid-offset($screen, $layout-columns-list);

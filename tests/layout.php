@@ -51,11 +51,11 @@ EOL;
       $rest = $columns - $i;
       echo <<<EOL
         <div class="row">
-          <div class="col grid-{$columns}-{$i}">
-            <div class="box">grid-{$columns}-{$i}</div>
+          <div class="col w-{$columns}-{$i}">
+            <div class="box">w-{$columns}-{$i}</div>
           </div>
-          <div class="col grid-{$columns}-{$rest}">
-            <div class="box">grid-{$columns}-{$rest}</div>
+          <div class="col w-{$columns}-{$rest}">
+            <div class="box">w-{$columns}-{$rest}</div>
           </div>
         </div>
 EOL;
@@ -84,17 +84,17 @@ EOL;
       <h3>{$gutter_text}</h3>
       <div class="container {$gutter}">
         <div class="row">
-          <div class="col grid-4-1">
-            <div class="box">grid-4-1</div>
+          <div class="col w-4-1">
+            <div class="box">w-4-1</div>
           </div>
-          <div class="col grid-4-1">
-            <div class="box">grid-4-1</div>
+          <div class="col w-4-1">
+            <div class="box">w-4-1</div>
           </div>
-          <div class="col grid-4-1">
-            <div class="box">grid-4-1</div>
+          <div class="col w-4-1">
+            <div class="box">w-4-1</div>
           </div>
-          <div class="col grid-4-1">
-            <div class="box">grid-4-1</div>
+          <div class="col w-4-1">
+            <div class="box">w-4-1</div>
           </div>
         </div>
       </div>
@@ -105,11 +105,11 @@ EOL;
   <h2>响应式</h2>
   <div class="container">
     <div class="row">
-      <div class="col  grid-4-1--md grid-2-1--lg">
-        <div class="box">grid-4-1--md <br> grid-2-1--lg</div>
+      <div class="col  w-4-1--md w-2-1--lg">
+        <div class="box">w-4-1--md <br> w-2-1--lg</div>
       </div>
-      <div class="col  grid-4-3--md grid-2-1--lg">
-        <div class="box">grid-4-3--md <br> grid-2-1--lg</div>
+      <div class="col  w-4-3--md w-2-1--lg">
+        <div class="box">w-4-3--md <br> w-2-1--lg</div>
       </div>
     </div>
   </div>
@@ -118,30 +118,30 @@ EOL;
 
   <div class="container">
     <div class="row">
-      <div class="col grid-6-1">
-        <div class="box">A <br> grid-6-1 </div>
+      <div class="col w-6-1">
+        <div class="box">A <br> w-6-1 </div>
       </div>
-      <div class="col grid-6-1 push-6-1">
-        <div class="box">B <br> grid-6-1 <br> push-6-1</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col grid-6-1">
-        <div class="box">A <br> grid-6-1</div>
-      </div>
-      <div class="col grid-6-1 push-6-2">
-        <div class="box">B <br> grid-6-1 <br> push-6-2</div>
+      <div class="col w-6-1 push-6-1">
+        <div class="box">B <br> w-6-1 <br> push-6-1</div>
       </div>
     </div>
     <div class="row">
-      <div class="col grid-6-1">
-        <div class="box">A <br> grid-6-1 </div>
+      <div class="col w-6-1">
+        <div class="box">A <br> w-6-1</div>
       </div>
-      <div class="col grid-6-1 push-6-1">
-        <div class="box">B <br> grid-6-1 <br> pull-6-1</div>
+      <div class="col w-6-1 push-6-2">
+        <div class="box">B <br> w-6-1 <br> push-6-2</div>
       </div>
-      <div class="col grid-6-1 pull-6-1">
-        <div class="box">C <br> grid-6-1 <br> push-6-1</div>
+    </div>
+    <div class="row">
+      <div class="col w-6-1">
+        <div class="box">A <br> w-6-1 </div>
+      </div>
+      <div class="col w-6-1 push-6-1">
+        <div class="box">B <br> w-6-1 <br> pull-6-1</div>
+      </div>
+      <div class="col w-6-1 pull-6-1">
+        <div class="box">C <br> w-6-1 <br> push-6-1</div>
       </div>
     </div>
   </div>
@@ -150,14 +150,14 @@ EOL;
 
   <div class="container">
     <div class="row">
-      <div class="col grid-6-1">
-        <div class="box">A <br> grid-6-1</div>
+      <div class="col w-6-1">
+        <div class="box">A <br> w-6-1</div>
       </div>
-      <div class="col grid-6-1 offset-6-1">
-        <div class="box">B <br> grid-6-1 <br> offset-6-1</div>
+      <div class="col w-6-1 offset-6-1">
+        <div class="box">B <br> w-6-1 <br> offset-6-1</div>
       </div>
-      <div class="col grid-6-1 offset-6-1">
-        <div class="box">C <br> grid-6-1 <br> offset-6-1</div>
+      <div class="col w-6-1 offset-6-1">
+        <div class="box">C <br> w-6-1 <br> offset-6-1</div>
       </div>
     </div>
   </div>
