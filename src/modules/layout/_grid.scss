@@ -60,23 +60,27 @@
 // Grid
 // ------------------------------------------------------------
 
+// 通用的100%的grid类
+.grid {
+  width: 100%;
+}
+
 // 用媒体查询生成网格
 
 // 默认screen
 @media screen {
-  @include layout-make-grid(default, $layout-columns-list);
+  @include layout-make-grid-width-map(default, $layout-columns-list);
   @include layout-make-push(default, $layout-columns-list);
   @include layout-make-pull(default, $layout-columns-list);
   @include layout-make-offset(default, $layout-columns-list);
 }
 
 // 依次设置每种screen类型
-@each $key, $width in $layout-breakpoints {
+@each $screen, $width in $layout-breakpoints {
   @media screen and (min-width: $width) {
-    @include layout-make-grid($key, $layout-columns-list);
-    @include layout-make-push($key, $layout-columns-list);
-    @include layout-make-pull($key, $layout-columns-list);
-    @include layout-make-offset($key, $layout-columns-list);
+    @include layout-make-grid-width-map($screen, $layout-columns-list);
+    @include layout-make-push($screen, $layout-columns-list);
+    @include layout-make-pull($screen, $layout-columns-list);
+    @include layout-make-offset($screen, $layout-columns-list);
   }
 }
-
