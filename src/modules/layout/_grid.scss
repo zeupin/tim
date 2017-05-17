@@ -32,7 +32,7 @@
   @include layout-container-common;
 
   // 依次设置每种screen
-  @each $key, $width in $layout-breakpoints {
+  @each $screen, $width in $layout-breakpoints {
     @media screen and (min-width: $width) {
       width: $width;
     }
