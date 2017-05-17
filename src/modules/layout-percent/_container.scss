@@ -3,37 +3,21 @@
 // ------------------------------------------------------------
 // @param $gutter-list 列间距的列表
 
-@mixin layout-container-common(
-  $gutter-list: $layout-gutter-list
-){
+@mixin layout-container-common(){
   margin-right: auto;
   margin-left: auto;
   overflow: hidden;
-
-  // gutter设置开始
-  @each $gutter-name, $gutter-width in $gutter-list {
-    @if $gutter-name == default {
-        padding-left:  ($gutter-width / -2);
-        padding-right: ($gutter-width / -2);
-    } @else {
-      &.#{$gutter-name} {
-        padding-left:  ($gutter-width / -2);
-        padding-right: ($gutter-width / -2);
-      }
-    }
-  }
-  // gutter设置结束
 
   @include clearfix;
 }
 
 
 // ------------------------------------------------------------
-// Container-fluid
+// Container-full
 // ------------------------------------------------------------
-// container-fluid 是100%宽度的container
+// container-full 是100%宽度的container
 
-.container-fluid {
+.container-full {
   @include layout-container-common;
 }
 
@@ -46,7 +30,7 @@
   @include layout-container-common;
 
   // 依次设置每种screen
-  @each $screen, $width in $layout-breakpoints {
+  @each $screen, $width in $global-breakpoints {
     @media screen and (min-width: $width) {
       width: $width;
     }

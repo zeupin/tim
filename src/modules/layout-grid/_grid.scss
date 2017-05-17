@@ -1,0 +1,31 @@
+@import "./_grid.mixins.scss";
+
+// ------------------------------------------------------------
+// 通用的100%的grid类
+// ------------------------------------------------------------
+
+.grid {
+  @include grid-make-grid;
+}
+
+// ------------------------------------------------------------
+// 用媒体查询生成网格
+// ------------------------------------------------------------
+
+// 默认screen
+@media screen {
+  @include grid-make-width(default);
+  @include grid-make-push(default);
+  @include grid-make-pull(default);
+  @include grid-make-offset(default);
+}
+
+// 依次设置每种screen类型
+@each $screen, $width in $global-breakpoints {
+  @media screen and (min-width: $width) {
+    @include grid-make-width($screen);
+    @include grid-make-push($screen, $grid-columns-list);
+    @include grid-make-pull($screen, $grid-columns-list);
+    @include grid-make-offset($screen, $grid-columns-list);
+  }
+}

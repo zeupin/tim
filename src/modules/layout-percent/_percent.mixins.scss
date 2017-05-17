@@ -1,0 +1,102 @@
+// ------------------------------------------------------------
+// 生成col
+// ------------------------------------------------------------
+
+@mixin layout-make-col(
+){
+  position: relative;
+  min-height: 1px;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+
+  // ------------------------------
+  // 设置等高列
+  //
+  // 需要对col所在的row或者container设置一个match-height类，如下：
+  // <div class="row match-height">
+  //   <div class="col"></div>
+  //   <div class="col"></div>
+  //   <div class="col"></div>
+  // </div>
+  .match-height & {
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+  }
+}
+
+
+// ------------------------------------------------------------
+// 百分比形式的width
+// ------------------------------------------------------------
+// 生成：
+// w-67 {width: 67%;}
+// w-67--md {width: 67%;}
+
+@mixin layout-make-percent-width(
+  $screen
+){
+  $screentype: if($screen == default, "", "--#{$screen}");
+  @for $i from 1 through 100 {
+    .w-#{$i}#{$screentype} {
+      width: percentage($i / 100);
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// 百分比形式的push
+// ------------------------------------------------------------
+// 生成：
+// push-67 {left: 67%;}
+// push-67--md {left: 67%;}
+
+@mixin layout-make-percent-push(
+  $screen
+){
+  $screentype: if($screen == default, "", "--#{$screen}");
+  @for $i from 1 to 100 {
+    .push-#{$i}#{$screentype} {
+      left: percentage($i / 100);
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// 百分比形式的pull
+// ------------------------------------------------------------
+// 生成：
+// pull-67 {right: 67%;}
+// pull-67--md {right: 67%;}
+
+@mixin layout-make-percent-pull(
+  $screen
+){
+  $screentype: if($screen == default, "", "--#{$screen}");
+  @for $i from 1 to 100 {
+    .pull-#{$i}#{$screentype} {
+      right: percentage($i / 100);
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// 百分比形式的offset
+// ------------------------------------------------------------
+// 生成：
+// offset-67 {margin-left: 67%;}
+// offset-67--md {margin-left: 67%;}
+
+@mixin layout-make-percent-offset(
+  $screen
+){
+  $screentype: if($screen == default, "", "--#{$screen}");
+  @for $i from 1 to 100 {
+    .offset-#{$i}#{$screentype} {
+      margin-left: percentage($i / 100);
+    }
+  }
+}

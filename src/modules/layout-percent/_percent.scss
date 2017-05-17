@@ -1,0 +1,31 @@
+@import "./_percent.mixins.scss";
+
+// ------------------------------------------------------------
+// col是无gutter的
+// ------------------------------------------------------------
+
+.col {
+  @include layout-make-col;
+}
+
+// ------------------------------------------------------------
+// 生成最终的百分比宽度系统
+// ------------------------------------------------------------
+
+// 默认screen
+@media screen {
+  @include layout-make-percent-width(default);
+  @include layout-make-percent-push(default);
+  @include layout-make-percent-pull(default);
+  @include layout-make-percent-offset(default);
+}
+
+// 依次设置每种screen类型
+@each $screen, $width in $global-breakpoints {
+  @media screen and (min-width: $width) {
+    @include layout-make-percent-width($screen);
+    @include layout-make-percent-push($screen);
+    @include layout-make-percent-pull($screen);
+    @include layout-make-percent-offset($screen);
+  }
+}

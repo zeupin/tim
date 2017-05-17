@@ -3,8 +3,14 @@
 // 导入mixins库
 @import "./mixins/_.scss";
 
-// Reset
+// reset
 @import "./modules/reset/_.scss";
 
-// 布局系统
-@import "./modules/layout/_.scss";
+// global
+@import "./modules/global/_.scss";
+
+// layout-grid
+@import "./modules/layout-grid/_.scss";
+
+// layout-percent
+@import "./modules/layout-percent/_.scss";
