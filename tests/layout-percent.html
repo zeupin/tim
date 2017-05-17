@@ -19,7 +19,7 @@
       text-align: center;
     }
 
-    .grid-row {
+    .row {
       margin-top: 0.5em;
     }
 
@@ -67,82 +67,66 @@
   </div>
 
   <h2>响应式</h2>
-  <div class="grid-container">
-    <div class="grid-row">
-      <div class="grid  w-4-1--md w-2-1--lg">
-        <div class="box">w-4-1--md <br> w-2-1--lg</div>
+  <div class="container">
+    <div class="row">
+      <div class="col w-25--md w-50--lg">
+        <div class="box">w-25--md <br> w-50--lg</div>
       </div>
-      <div class="grid  w-4-3--md w-2-1--lg">
-        <div class="box">w-4-3--md <br> w-2-1--lg</div>
+      <div class="col w-75--md w-50--lg">
+        <div class="box">w-75--md <br> w-50--lg</div>
       </div>
     </div>
   </div>
 
   <h2>Push 和 Pull</h2>
 
-  <div class="grid-container">
-    <div class="grid-row">
-      <div class="grid w-6-1">
-        <div class="box">A <br> w-6-1 </div>
+  <div class="container">
+    <div class="row">
+      <div class="col w-15">
+        <div class="box">A <br> w-15 </div>
       </div>
-      <div class="grid w-6-1 push-6-1">
-        <div class="box">B <br> w-6-1 <br> push-6-1</div>
-      </div>
-    </div>
-    <div class="grid-row">
-      <div class="grid w-6-1">
-        <div class="box">A <br> w-6-1</div>
-      </div>
-      <div class="grid w-6-1 push-6-2">
-        <div class="box">B <br> w-6-1 <br> push-6-2</div>
+      <div class="col w-15 push-15">
+        <div class="box">B <br> w-15 <br> push-15</div>
       </div>
     </div>
-    <div class="grid-row">
-      <div class="grid w-6-1">
-        <div class="box">A <br> w-6-1 </div>
+    <div class="row">
+      <div class="col w-15">
+        <div class="box">A <br> w-15</div>
       </div>
-      <div class="grid w-6-1 push-6-1">
-        <div class="box">B <br> w-6-1 <br> pull-6-1</div>
+      <div class="col w-15 push-30">
+        <div class="box">B <br> w-15 <br> push-30</div>
       </div>
-      <div class="grid w-6-1 pull-6-1">
-        <div class="box">C <br> w-6-1 <br> push-6-1</div>
+    </div>
+    <div class="row">
+      <div class="col w-15">
+        <div class="box">A <br> w-15 </div>
+      </div>
+      <div class="col w-15 push-15">
+        <div class="box">B <br> w-15 <br> pull-15</div>
+      </div>
+      <div class="col w-15 pull-15">
+        <div class="box">C <br> w-15 <br> push-15</div>
       </div>
     </div>
   </div>
 
   <h2>Offset</h2>
 
-  <div class="grid-container">
-    <div class="grid-row">
-      <div class="grid w-6-1">
-        <div class="box">A <br> w-6-1</div>
+  <div class="container">
+    <div class="row">
+      <div class="col w-15">
+        <div class="box">A <br> w-15</div>
       </div>
-      <div class="grid w-6-1 offset-6-1">
-        <div class="box">B <br> w-6-1 <br> offset-6-1</div>
+      <div class="col w-15 offset-15">
+        <div class="box">B <br> w-15 <br> offset-15</div>
       </div>
-      <div class="grid w-6-1 offset-6-1">
-        <div class="box">C <br> w-6-1 <br> offset-6-1</div>
+      <div class="col w-15 offset-15">
+        <div class="box">C <br> w-15 <br> offset-15</div>
       </div>
     </div>
   </div>
 
   <h2>等高列</h2>
-
-  <div class="grid-container">
-    <div class="grid-row match-height">
-      <div class="grid w-10-2">
-        <div class="box">A</div>
-      </div>
-      <div class="grid w-10-6">
-        <div class="box">B <br> B</div>
-      </div>
-      <div class="grid w-10-2">
-        <div class="box">C <br> C <br> C</div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
 
   <div class="container">
     <div class="row match-height">
@@ -157,6 +141,8 @@
       </div>
     </div>
   </div>
+
+  <hr>
 
 </body>
 
