@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-$ie8: false;
+$ie8: true !global;
 
 // 导入mixins库
 @import "./mixins/_.scss";
