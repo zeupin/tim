@@ -1,0 +1,23 @@
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.image-left {
+  float: left;
+  margin-right: rem(2);
+  margin-bottom: rem(2);
+}
+
+.image-right {
+  float: right;
+  margin-left: rem(2);
+  margin-bottom: rem(2);
+}

@@ -1,18 +1,5 @@
 @charset "UTF-8";
 
-$ie8: true !global;
+$ie: true;
 
-// 导入mixins库
-@import "./mixins/_.scss";
-
-// reset
-@import "./modules/reset/_.scss";
-
-// global
-@import "./modules/global/_.scss";
-
-// layout-grid
-@import "./modules/layout-grid/_.scss";
-
-// layout-percent
-@import "./modules/layout-percent/_.scss";
+@import "tim.scss";

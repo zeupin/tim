@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-$ie8: false !global;
+$ie: false !default;
 
 // 导入mixins库
 @import "./mixins/_.scss";
@@ -10,6 +10,9 @@ $ie8: false !global;
 
 // global
 @import "./modules/global/_.scss";
+
+// layout generic
+@import "./modules/layout/_.scss";
 
 // layout-grid
 @import "./modules/layout-grid/_.scss";
