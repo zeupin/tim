@@ -1,0 +1,39 @@
+// ------------------------------------------------------------
+// 返回去除掉单位的数值
+// ------------------------------------------------------------
+// 例：
+// strip-unit(12px) = 12
+// strip-unit(34rem) = 34
+//
+@function strip-units($number){
+  @return $number / ($number * 0 + 1);
+}
+
+
+// ------------------------------------------------------------
+// 返回对应的rem值
+// ------------------------------------------------------------
+// rem(2) 返回 2rem
+// rem(3rem) 返回 3rem
+// rem(32px) 返回 2rem
+//
+// @param $val 传入值
+// @param $ie 是否是IE浏览器
+//
+@function rem($val, $ie:$ie){
+  @if type-of($val) == "number" {
+    @if unitless($val) == true {
+      @return if($ie, $val * 16 * 1px, #{$val}rem);
+    }
+
+    @if unit($val) == "rem" {
+      @return if($ie, $val / 1rem * 16px, $val);
+    }
+
+    @if unit($val) == "px" {
+      @return if($ie, $val, $val / 16px * 1rem);
+    }
+  }
+
+  @warn 'rem()函数只允许 rem、px、纯数字 这三种类型的数值。';
+}
