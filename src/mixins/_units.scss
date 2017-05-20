@@ -23,7 +23,7 @@
 @function rem($val, $ie:$ie){
   @if type-of($val) == "number" {
     @if unitless($val) == true {
-      @return if($ie, $val * 16 * 1px, #{$val}rem);
+      @return if($ie, $val * 16px, $val * 1rem);
     }
 
     @if unit($val) == "rem" {
