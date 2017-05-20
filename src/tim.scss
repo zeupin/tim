@@ -2,7 +2,7 @@
 
 $ie: false !default;
 
-// 导入mixins库
+// mixins & functions
 @import "./mixins/_.scss";
 
 // reset
@@ -10,6 +10,12 @@ $ie: false !default;
 
 // global
 @import "./modules/global/_.scss";
+
+// color
+@import "./modules/color/_.scss";
+
+// typography
+@import "./modules/typography/_.scss";
 
 // layout generic
 @import "./modules/layout/_.scss";
