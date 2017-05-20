@@ -1,0 +1,15 @@
+// mark 高亮标记
+mark, .mark {
+  background-color: $color-text-highlight;
+}
+
+// del 删除线
+del, .del {
+  text-decoration: line-through;
+}
+
+// underline 下划线
+u, .underline {
+  text-decoration: underline;
+}
+

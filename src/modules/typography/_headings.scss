@@ -10,13 +10,13 @@
 // .heading 文章标题
 // .subheading 文章副标题
 
-h1,h2,h3,h4,
-.heading, .subheading {
+h1,h2,h3,h4 {
   font-weight: bold;
   color: $color-heading;
 }
 
 h5,h6 {
+  margin: 0;
   font-weight: bold;
   color: $color-text;
 }
@@ -26,11 +26,9 @@ h2 {font-size: $fontsize-h2; line-height: $lineheight-h2;}
 h3 {font-size: $fontsize-h3; line-height: $lineheight-h3;}
 h4 {font-size: $fontsize-h4; line-height: $lineheight-h4;}
 h5 {font-size: $fontsize-h5; line-height: $lineheight-h5;}
-h5 {font-size: $fontsize-h6; line-height: $lineheight-h6;}
+h6 {font-size: $fontsize-h6; line-height: $lineheight-h6;}
 
-.heading {font-size: $fontsize-h1; line-height: $lineheight-h1;}
-.subheading {font-size: $fontsize-h1 * 0.8; line-height: $lineheight-h1 * 0.8;}
-
+// 文章的副标题
 h1 small,
 h1 .small {
   font-size: $fontsize-h1 * 0.8;

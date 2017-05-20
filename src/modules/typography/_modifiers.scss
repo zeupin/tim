@@ -1,3 +1,24 @@
+// 小一号字体
 small, .small {
   font-size: 0.9em;
+}
+
+// 转换为全小写
+.lowercase {
+  text-transform: lowercase;
+}
+
+// 转换为全大写
+.uppercase {
+  text-transform: uppercase;
+}
+
+// 转换为每个单词的首字母均大写
+.capitalize {
+  text-transform: capitalize;
+}
+
+// 小型大写
+.small-caps {
+  font-variant: small-caps;
 }

@@ -1,0 +1,39 @@
+// ------------------------------------------------------------
+// dl 带有描述的短语列表
+// ------------------------------------------------------------
+// 用法
+// <dl>
+//   <dt>术语</dt><dd>解释</dd>
+//   <dt>术语</dt><dd>解释</dd>
+//   <dt>术语</dt><dd>解释</dd>
+// </dl>
+
+dt, dd {
+  font-size: $fontsize-base;
+  line-height: $fontsize-base * 1.1;
+}
+
+// 一般的dl：dt在一行，dd在下一行
+dl {
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin-bottom: $fontsize-p;
+  }
+}
+
+// 水平排列的dl：dt和dd在同一行
+.dl-horizontal {
+  $dt-width: rem(10);
+  dt {
+    float: left;
+    width: $dt-width;
+    clear: left;
+    text-align: right;
+    white-space: nowrap;
+  }
+  dd {
+    margin-left: $dt-width + rem(1);
+  }
+}

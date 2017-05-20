@@ -1,0 +1,25 @@
+// ------------------------------------------------------------
+// 引用
+// ------------------------------------------------------------
+// 用法：
+// <blockquote>
+//   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+//   <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+// </blockquote>
+
+blockquote {
+  // 边线
+  border-left: rem(4px) solid #eeeeee;
+  padding-left: 2em;
+
+  // 脚注
+  footer, .footer {
+    text-align: right;
+    font-size: 0.9em;
+  }
+
+  // 被引用的人
+  cite, .cite {
+    font-style: italic;
+  }
+}

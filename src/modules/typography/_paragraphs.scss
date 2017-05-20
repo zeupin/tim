@@ -6,6 +6,15 @@ p {
   font-size: $fontsize-p;
   line-height: $lineheight-p;
   color: $color-text;
+  margin-bottom: $lineheight-p;
+}
+
+p.small {
+  font-size: $fontsize-p * 0.9;
+}
+
+p.big {
+  font-size: $fontsize-p * 1.1;
 }
 
 p a {
