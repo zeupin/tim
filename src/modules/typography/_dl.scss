@@ -13,25 +13,18 @@ dt, dd {
   line-height: $fontsize-base * 1.1;
 }
 
-// 一般的dl：dt在一行，dd在下一行
-dl {
-  dt {
-    font-weight: bold;
-  }
-  dd {
-    margin-bottom: $fontsize-p;
-  }
+// 普通的dl：dt在一行，dd在下一行
+dt {
+  font-weight: bold;
 }
 
 // 水平排列的dl：dt和dd在同一行
-.dl-horizontal {
+dl.horizontal {
   $dt-width: rem(10);
   dt {
     float: left;
     width: $dt-width;
     clear: left;
-    text-align: right;
-    white-space: nowrap;
   }
   dd {
     margin-left: $dt-width + rem(1);
