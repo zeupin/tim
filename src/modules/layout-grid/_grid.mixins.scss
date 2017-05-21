@@ -16,12 +16,10 @@
   // 设置gutter
   @each $gutter-name, $gutter-width in $gutter-list {
     @if $gutter-name == default {
-        margin-left:  ($gutter-width / 2);
-        margin-right: ($gutter-width / 2);
+        margin-left:  $gutter-width;
     } @else {
       .#{$gutter-name} & {
-        margin-left:  ($gutter-width / 2);
-        margin-right: ($gutter-width / 2);
+        margin-left: $gutter-width;
       }
     }
   }
