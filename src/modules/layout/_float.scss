@@ -10,5 +10,6 @@
 
 // 清除浮动
 .clearfix {
+  clear: both;
   @include clearfix();
 }
