@@ -1,0 +1,57 @@
+// ------------------------------------------------------------
+// 表单项
+// ------------------------------------------------------------
+// 1. 一个表单项可能包含有若干个表单域。
+//    比如说一个“日期”表单项包含有年、月、日这三个表单域。
+// 2. 一个表单项包括：
+//   a. 标签区：
+//   b. 输入区：input-zone，一个或者多个表单域，参见1
+//   c. 提示区：input-tips，用于显示提示信息
+//   d. 验证通知：input-notify，用于显示表单的验证结果通知
+$form-spacer: $lineheight-form;
+
+.form-item {
+  display: block;
+  width: 100%;
+  margin-bottom: $form-spacer;
+
+  label,
+  .label {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    font-size: $fontsize-form;
+    line-height: $lineheight-form;
+    margin-bottom: $form-spacer / 2;
+  }
+}
+
+// 只有一个表单域的input区
+.input {
+  display: block;
+  width: 100%;
+  font-size: $fontsize-form;
+  line-height: $lineheight-form;
+}
+
+// 多个表单域联合成的input区
+.input-group {
+  display: block;
+}
+
+// 提示区
+.input-tips {
+  display: block;
+  font-size: $fontsize-input-tips;
+  line-height: $lineheight-input-tips;
+  margin-top: $form-spacer / 2;
+  color: lighten($color-text, 0.8);
+}
+
+// 验证通知区
+.input-notify {
+  display: block;
+  font-size: $fontsize-input-notify;
+  line-height: $lineheight-input-notify;
+  margin-top: $form-spacer / 2;
+}

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Percent Layout</title>
-  <link rel="stylesheet" href="../dist/css/tim.base.css">
+  <link rel="stylesheet" href="../dist/css/tim.css">
   <style>
     h2 {
       margin: 1em 0;
@@ -26,22 +26,22 @@
     .bg-yellow {
       background-color: yellow;
     }
-    
+
     .bg-red {
       background-color: red;
     }
-    
+
     .bg-green {
       background-color: green;
     }
 
-    .box {
+    /*.box {
       white-space: nowrap;
       line-height: 2em;
       width: 100%;
       background-color: #eeeeee;
       height: 100%;
-    }
+    }*/
   </style>
 </head>
 
@@ -51,8 +51,9 @@
   <div class="container">
     <!-- 50% + 50% 布局 -->
     <div class="row">
-      <div class="col w-50 bg-red">...</div>
-      <div class="col w-50 bg-green">...</div>
+      <div class="col w-48 bg-red">...</div>
+      <div class="nullcol w-4 bg-yellow">&nbsp;</div>
+      <div class="col w-48 bg-green">...</div>
     </div>
 	<!-- 30% + 40% + 30% 布局 -->
     <div class="row">
@@ -62,7 +63,7 @@
     </div>
 	<!-- 100% 布局 -->
     <div class="row">
-      <div class="col bg-green">...</div>
+      <div class="col w bg-green">...</div>
     </div>
   </div>
 
