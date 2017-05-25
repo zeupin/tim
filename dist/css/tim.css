@@ -634,69 +634,43 @@ small, .small {
   margin-bottom: 2rem;
 }
 
-.grid-container-full {
+.container-fluid {
   margin-right: auto;
   margin-left: auto;
   overflow: hidden;
-  padding-left: -1.2%;
 }
-.grid-container-full.nogutter {
-  padding-left: 0;
-}
-.grid-container-full.gutter-s {
-  padding-left: -0.6%;
-}
-.grid-container-full.gutter-x {
-  padding-left: -2%;
-}
-.grid-container-full.gutter-xx {
-  padding-left: -4%;
-}
-.grid-container-full:before, .grid-container-full:after {
+.container-fluid:before, .container-fluid:after {
   content: " ";
   display: table;
 }
-.grid-container-full:after {
+.container-fluid:after {
   clear: both;
 }
 
-.grid-container {
+.container {
   margin-right: auto;
   margin-left: auto;
   overflow: hidden;
-  padding-left: -1.2%;
 }
-.grid-container.nogutter {
-  padding-left: 0;
-}
-.grid-container.gutter-s {
-  padding-left: -0.6%;
-}
-.grid-container.gutter-x {
-  padding-left: -2%;
-}
-.grid-container.gutter-xx {
-  padding-left: -4%;
-}
-.grid-container:before, .grid-container:after {
+.container:before, .container:after {
   content: " ";
   display: table;
 }
-.grid-container:after {
+.container:after {
   clear: both;
 }
 @media screen and (min-width: 64em) {
-  .grid-container {
+  .container {
     width: 64em;
   }
 }
 @media screen and (min-width: 75em) {
-  .grid-container {
+  .container {
     width: 75em;
   }
 }
 @media screen and (min-width: 87.5em) {
-  .grid-container {
+  .container {
     width: 87.5em;
   }
 }
@@ -7809,47 +7783,6 @@ small, .small {
     margin-left: 95%;
   }
 }
-.container-full {
-  margin-right: auto;
-  margin-left: auto;
-  overflow: hidden;
-}
-.container-full:before, .container-full:after {
-  content: " ";
-  display: table;
-}
-.container-full:after {
-  clear: both;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  overflow: hidden;
-}
-.container:before, .container:after {
-  content: " ";
-  display: table;
-}
-.container:after {
-  clear: both;
-}
-@media screen and (min-width: 64em) {
-  .container {
-    width: 64em;
-  }
-}
-@media screen and (min-width: 75em) {
-  .container {
-    width: 75em;
-  }
-}
-@media screen and (min-width: 87.5em) {
-  .container {
-    width: 87.5em;
-  }
-}
-
 .row:before, .row:after {
   content: " ";
   display: table;
