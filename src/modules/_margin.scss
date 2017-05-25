@@ -1,0 +1,26 @@
+$margin-settings: (
+  default: rem(1),
+  s: rem(0.5),
+  x: rem(1.5),
+  xx: rem(2)
+);
+
+@each $type, $val in $margin-settings {
+  $suffix: if($type == default, "", "-#{$type}");
+
+  .margin-top#{$suffix} {
+    margin-top: $val;
+  }
+
+  .margin-bottom#{$suffix} {
+    margin-bottom: $val;
+  }
+
+  .margin-left#{$suffix} {
+    margin-left: $val;
+  }
+
+  .margin-right#{$suffix} {
+    margin-right: $val;
+  }
+}

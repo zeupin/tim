@@ -634,6 +634,70 @@ small, .small {
   margin-bottom: 2rem;
 }
 
+.margin-top {
+  margin-top: 1rem;
+}
+
+.margin-bottom {
+  margin-bottom: 1rem;
+}
+
+.margin-left {
+  margin-left: 1rem;
+}
+
+.margin-right {
+  margin-right: 1rem;
+}
+
+.margin-top-s {
+  margin-top: 0.5rem;
+}
+
+.margin-bottom-s {
+  margin-bottom: 0.5rem;
+}
+
+.margin-left-s {
+  margin-left: 0.5rem;
+}
+
+.margin-right-s {
+  margin-right: 0.5rem;
+}
+
+.margin-top-x {
+  margin-top: 1.5rem;
+}
+
+.margin-bottom-x {
+  margin-bottom: 1.5rem;
+}
+
+.margin-left-x {
+  margin-left: 1.5rem;
+}
+
+.margin-right-x {
+  margin-right: 1.5rem;
+}
+
+.margin-top-xx {
+  margin-top: 2rem;
+}
+
+.margin-bottom-xx {
+  margin-bottom: 2rem;
+}
+
+.margin-left-xx {
+  margin-left: 2rem;
+}
+
+.margin-right-xx {
+  margin-right: 2rem;
+}
+
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
