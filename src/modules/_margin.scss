@@ -23,7 +23,7 @@ $margin-settings: (
 // 水平方向的margin
 // ------------------------------------------------------------
 
-$margin-x-spacer: rem(1);
+$margin-x-spacer: 2%;  // 1个margin水平单位
 
 $margin-x-settings: (
   '': $margin-x-spacer,
@@ -42,7 +42,7 @@ $margin-x-settings: (
 // 垂直方向的margin
 // ------------------------------------------------------------
 
-$margin-y-spacer: rem(1);
+$margin-y-spacer: rem(1);  // 1个margin垂直单位
 
 $margin-y-settings: (
   '': $margin-y-spacer,
