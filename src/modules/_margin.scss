@@ -1,26 +1,57 @@
+@import "_margin.mixins.scss";
+
+// ------------------------------------------------------------
+// 固定设置的一些 margin
+// ------------------------------------------------------------
+
 $margin-settings: (
-  default: rem(1),
-  s: rem(0.5),
-  x: rem(1.5),
-  xx: rem(2)
+  '-auto': auto,
+  '-0''': 0,
 );
 
-@each $type, $val in $margin-settings {
-  $suffix: if($type == default, "", "-#{$type}");
+@each $suffix, $val in $margin-settings {
+  @include tim-margin-top($suffix, $val);
+  @include tim-margin-bottom($suffix, $val);
+  @include tim-margin-left($suffix, $val);
+  @include tim-margin-right($suffix, $val);
+  @include tim-margin-x($suffix, $val);
+  @include tim-margin-y($suffix, $val);
+}
 
-  .margin-top#{$suffix} {
-    margin-top: $val;
-  }
 
-  .margin-bottom#{$suffix} {
-    margin-bottom: $val;
-  }
+// ------------------------------------------------------------
+// 水平方向的margin
+// ------------------------------------------------------------
 
-  .margin-left#{$suffix} {
-    margin-left: $val;
-  }
+$margin-x-spacer: rem(1);
 
-  .margin-right#{$suffix} {
-    margin-right: $val;
-  }
+$margin-x-settings: (
+  '': $margin-x-spacer,
+  '-1': $margin-x-spacer * 1.5,
+  '-2': $margin-x-spacer * 2,
+);
+
+@each $suffix, $val in $margin-x-settings {
+  @include tim-margin-left($suffix, $val);
+  @include tim-margin-right($suffix, $val);
+  @include tim-margin-x($suffix, $val);
+}
+
+
+// ------------------------------------------------------------
+// 垂直方向的margin
+// ------------------------------------------------------------
+
+$margin-y-spacer: rem(1);
+
+$margin-y-settings: (
+  '': $margin-y-spacer,
+  '-1': $margin-y-spacer * 1.5,
+  '-2': $margin-y-spacer * 2,
+);
+
+@each $suffix, $val in $margin-y-settings {
+  @include tim-margin-top($suffix, $val);
+  @include tim-margin-bottom($suffix, $val);
+  @include tim-margin-y($suffix, $val);
 }

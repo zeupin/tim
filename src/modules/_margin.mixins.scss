@@ -1,0 +1,71 @@
+// ------------------------------------------------------------
+// @mixin margin 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-all($suffix, $val) {
+  .margin#{$suffix} {
+    margin: $val !important;
+  }
+}
+
+// ------------------------------------------------------------
+// @mixin margin-top 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-top($suffix, $val) {
+  .margin-top#{$suffix} {
+    margin-top: $val !important;
+  }
+}
+
+// ------------------------------------------------------------
+// @mixin margin-bottom 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-bottom($suffix, $val) {
+  .margin-bottom#{$suffix} {
+    margin-bottom: $val !important;
+  }
+}
+
+// ------------------------------------------------------------
+// @mixin margin-left 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-left($suffix, $val) {
+  .margin-left#{$suffix} {
+    margin-left: $val !important;
+  }
+}
+
+// ------------------------------------------------------------
+// @mixin margin-right 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-right($suffix, $val) {
+  .margin-right#{$suffix} {
+    margin-right: $val !important;
+  }
+}
+
+// ------------------------------------------------------------
+// @mixin margin-x 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-x($suffix, $val) {
+  .margin-x#{$suffix} {
+    margin-left: $val !important;
+    margin-right: $val !important;
+  }
+}
+
+// ------------------------------------------------------------
+// @mixin margin-y 系列
+// ------------------------------------------------------------
+
+@mixin tim-margin-y($suffix, $val) {
+  .margin-y#{$suffix} {
+    margin-top: $val !important;
+    margin-bottom: $val !important;
+  }
+}
