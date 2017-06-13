@@ -2,35 +2,50 @@
 
 $ie: false !default;
 
+// ------------------------------------------------------------
 // mixins & functions
+// ------------------------------------------------------------
+
 @import "./mixins/_.scss";
 
+// ------------------------------------------------------------
 // reset
-@import "./modules/reset/_.scss";
+// ------------------------------------------------------------
 
-// global
-@import "./modules/global/_.scss";
+@import "./modules/_normalize.scss";
+@import "./modules/_box-sizing.scss";
 
-// color
-@import "./modules/color/_.scss";
+// ------------------------------------------------------------
+// settings
+// ------------------------------------------------------------
 
+@import "./modules/_settings.scss";
+
+// ------------------------------------------------------------
+// layout
+// ------------------------------------------------------------
+
+@import "./modules/_grid-layout.scss";
+
+// ------------------------------------------------------------
 // typography
-@import "./modules/typography/_.scss";
+// ------------------------------------------------------------
 
-// layout generic
-@import "./modules/layout/_.scss";
+@import "./modules/_headings.scss";
+@import "./modules/_paragraphs.scss";
 
-// margin
+// ------------------------------------------------------------
+// utilities
+// ------------------------------------------------------------
+
 @import "./modules/_margin.scss";
+@import "./modules/_align.scss";
+@import "./modules/_float.scss";
+@import "./modules/_wrapper.scss";
+@import "./modules/_image.scss";
 
-// container
-@import "./modules/_container.scss";
-
-// layout-grid
-@import "./modules/layout-grid/_.scss";
-
-// layout-percent
-@import "./modules/layout-percent/_.scss";
-
+// ------------------------------------------------------------
 // form
-@import "./modules/_form.scss";
+// ------------------------------------------------------------
+
+@import "./modules/_button.scss";

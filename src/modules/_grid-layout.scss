@@ -1,0 +1,54 @@
+@import "./_grid-layout.mixins.scss";
+
+.container,
+.row,
+.grid {
+  box-sizing: border-box;
+}
+
+// ------------------------------------------------------------
+// Container-full
+// ------------------------------------------------------------
+// container-full 是100%宽度的container
+
+.container-full {
+  @include tim-container-common;
+}
+
+
+// ------------------------------------------------------------
+// Container
+// ------------------------------------------------------------
+
+.container {
+  @include tim-container-common;
+
+  // 依次设置每种screen
+  @each $screen, $width in $breakpoints {
+    @media screen and (min-width: $width) {
+      width: $width;
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// row 和 grid
+// ------------------------------------------------------------
+
+@each $gutterclass, $gutterwidth in $grid-gutter-list {
+  @include tim-make-row($gutterclass, $gutterwidth);
+  @include tim-make-grid($gutterclass, $gutterwidth);
+}
+
+
+// ------------------------------------------------------------
+// width, push, pull, offset
+// ------------------------------------------------------------
+
+@each $columns in $grid-columns-list {
+  @include tim-make-grid-width($columns);
+  @include tim-make-grid-push($columns);
+  @include tim-make-grid-pull($columns);
+  @include tim-make-grid-offset($columns);
+}

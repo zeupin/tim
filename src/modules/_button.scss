@@ -1,0 +1,5 @@
+@import "./_button.mixins.scss";
+
+.btn {
+  @include tim-make-button;
+}

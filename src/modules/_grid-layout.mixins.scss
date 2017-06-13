@@ -1,0 +1,133 @@
+// ------------------------------------------------------------
+// @mixin tim-container-common() 公用样式
+// ------------------------------------------------------------
+
+@mixin tim-container-common(){
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+
+  @include clearfix;
+}
+
+
+// ------------------------------------------------------------
+// @mixin tim-make-row()
+// ------------------------------------------------------------
+
+@mixin tim-make-row($gutterclass, $gutterwidth) {
+  .row#{$gutterclass} {
+    margin-left: ($gutterwidth / -2);
+    margin-right: ($gutterwidth / -2);
+    @include clearfix;
+  }
+}
+
+
+// ------------------------------------------------------------
+// @mixin tim-make-grid()
+// ------------------------------------------------------------
+// 1. 限定背景只显示在内容区域，不显示在padding设置的gutter区域
+
+@mixin tim-make-grid($gutterclass, $gutterwidth) {
+  @if ($gutterclass == '') {
+    .grid {
+      position: relative;
+      min-height: 1px;
+      float: left;
+      overflow: hidden;
+      background-clip: content-box;   // 1
+      padding-left: $gutterwidth / 2;
+      padding-right: $gutterwidth / 2;
+    }
+  }
+  @else {
+    #{$gutterclass} > .grid {
+      position: relative;
+      min-height: 1px;
+      float: left;
+      overflow: hidden;
+      background-clip: content-box;   // 1
+      padding-left: $gutterwidth / 2;
+      padding-right: $gutterwidth / 2;
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// @mixin tim-make-grid-width()
+// ------------------------------------------------------------
+
+@mixin tim-make-grid-width($columns) {
+  @for $i from 1 through $columns {
+    $map: ".w-#{$columns}-#{$i}";
+    @each $screen, $val in $breakpoints {
+      $map: append($map, ".w-#{$columns}-#{$i}--#{$screen}", comma);
+    }
+
+    #{$map} {
+      width: percentage( $i / $columns);
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// tim-make-grid-push，生成对应的push
+// ------------------------------------------------------------
+//
+// 注意：最多只到 push-4-3, 没有 push-4-4 这种
+
+@mixin tim-make-grid-push($columns) {
+  @for $i from 1 to $columns {
+    $map: ".push-#{$columns}-#{$i}";
+    @each $screen, $val in $breakpoints {
+      $map: append($map, ".push-#{$columns}-#{$i}--#{$screen}", comma);
+    }
+
+    #{$map} {
+      left: percentage( $i / $columns);
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// tim-make-grid-pull，生成对应的pull
+// ------------------------------------------------------------
+//
+// 注意：最多只到 pull-4-3, 没有 pull-4-4 这种
+
+@mixin tim-make-grid-pull($columns) {
+  @for $i from 1 to $columns {
+    $map: ".pull-#{$columns}-#{$i}";
+    @each $screen, $val in $breakpoints {
+      $map: append($map, ".pull-#{$columns}-#{$i}--#{$screen}", comma);
+    }
+
+    #{$map} {
+      right: percentage( $i / $columns);
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// tim-make-grid-offset，生成对应的offset
+// ------------------------------------------------------------
+//
+// 注意：最多只到 offset-4-3, 没有 offset-4-4 这种
+
+@mixin tim-make-grid-offset($columns) {
+  @for $i from 1 to $columns {
+    $map: ".offset-#{$columns}-#{$i}";
+    @each $screen, $val in $breakpoints {
+      $map: append($map, ".offset-#{$columns}-#{$i}--#{$screen}", comma);
+    }
+
+    #{$map} {
+      margin-left: percentage( $i / $columns);
+    }
+  }
+}

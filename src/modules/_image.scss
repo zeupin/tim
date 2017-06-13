@@ -1,0 +1,27 @@
+// ------------------------------------------------------------
+// 响应式图片
+// ------------------------------------------------------------
+
+.image-fullwidth {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-fullheight {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.image-limit-width {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.image-limit-height {
+  display: block;
+  max-height: 100%;
+  width: auto;
+}
