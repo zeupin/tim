@@ -3,17 +3,16 @@
 $ie: false !default;
 
 // ------------------------------------------------------------
+// 固定加载的模块
+// ------------------------------------------------------------
+
+@import "./require/_.scss";
+
+// ------------------------------------------------------------
 // mixins & functions
 // ------------------------------------------------------------
 
-@import "./mixins/_.scss";
-
-// ------------------------------------------------------------
-// reset
-// ------------------------------------------------------------
-
-@import "./modules/_normalize.scss";
-@import "./modules/_box-sizing.scss";
+@import "./modules/_mixins.scss";
 
 // ------------------------------------------------------------
 // settings
@@ -22,30 +21,36 @@ $ie: false !default;
 @import "./modules/_settings.scss";
 
 // ------------------------------------------------------------
+// reset
+// ------------------------------------------------------------
+
+@import "./modules/box-sizing/_box-sizing.scss";
+
+// ------------------------------------------------------------
 // layout
 // ------------------------------------------------------------
 
-@import "./modules/_grid-layout.scss";
+@import "./modules/grid-system/_grid-system.scss";
 
 // ------------------------------------------------------------
 // typography
 // ------------------------------------------------------------
 
-@import "./modules/_article.scss";
+@import "./modules/article/_article.scss";
 
 // ------------------------------------------------------------
 // utilities
 // ------------------------------------------------------------
 
-@import "./modules/_margin.scss";
-@import "./modules/_align.scss";
-@import "./modules/_float.scss";
-@import "./modules/_wrapper.scss";
-@import "./modules/_image.scss";
-@import "./modules/_border.scss";
+@import "./modules/margin/_margin.scss";
+@import "./modules/align/_align.scss";
+@import "./modules/float/_float.scss";
+@import "./modules/wrapper/_wrapper.scss";
+@import "./modules/image/_image.scss";
+@import "./modules/border/_border.scss";
 
 // ------------------------------------------------------------
 // form
 // ------------------------------------------------------------
 
-@import "./modules/_button.scss";
+@import "./modules/button/_button.scss";

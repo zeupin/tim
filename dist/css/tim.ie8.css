@@ -1842,7 +1842,32 @@ template {
   margin-left: 95%;
 }
 
-h1, h2, h3, h4 {
+article,
+.article,
+.main {
+  font-size: 16px;
+  line-height: 28.8px;
+  color: #303336;
+}
+article a,
+.article a,
+.main a {
+  color: #3794de;
+  text-decoration: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.2em;
+}
+
+h1, h2 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+h3, h4 {
   font-weight: bold;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -1861,17 +1886,17 @@ h1 {
 
 h2 {
   font-size: 28.8px;
-  line-height: 43.2px;
+  line-height: 31.68px;
 }
 
 h3 {
   font-size: 25.6px;
-  line-height: 38.4px;
+  line-height: 35.84px;
 }
 
 h4 {
   font-size: 24px;
-  line-height: 36px;
+  line-height: 33.6px;
 }
 
 h5 {
@@ -1884,29 +1909,9 @@ h6 {
   line-height: 35.2px;
 }
 
-small, .small {
+small,
+.small {
   font-size: 0.85em;
-}
-
-p {
-  font-size: 16px;
-  line-height: 28.8px;
-  color: #303336;
-  margin-top: 0;
-  margin-bottom: 28.8px;
-}
-
-p.small {
-  font-size: 14.4px;
-}
-
-p.big {
-  font-size: 17.6px;
-}
-
-p a {
-  color: #3794de;
-  text-decoration: none;
 }
 
 .margin-top-auto {
@@ -2121,6 +2126,30 @@ p a {
   display: block;
   max-height: 100%;
   width: auto;
+}
+
+.border {
+  border: 3px solid #aaa;
+}
+
+.border-1px {
+  border: 1px solid #aaa;
+}
+
+.border-fine {
+  border: 2.4px solid #aaa;
+}
+
+.border-finer {
+  border: 1.5px solid #aaa;
+}
+
+.border-thick {
+  border: 6px solid #aaa;
+}
+
+.border-thicker {
+  border: 12px solid #aaa;
 }
 
 .btn {

@@ -14,6 +14,7 @@ $form-spacer: $lineheight-form;
   display: block;
   width: 100%;
   margin-bottom: $form-spacer;
+  line-height: 150%;
 
   label,
   .label {
@@ -54,4 +55,11 @@ $form-spacer: $lineheight-form;
   font-size: $fontsize-input-notify;
   line-height: $lineheight-input-notify;
   margin-top: $form-spacer / 2;
+}
+
+input:button,
+button,
+input:submit,
+input:reset {
+  padding: rem(0.4) rem(1);
 }

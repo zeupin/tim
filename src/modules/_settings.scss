@@ -1,7 +1,8 @@
-@import "./_breakpoints.settings.scss";
-@import "./_grid-layout.settings.scss";
-@import "./_margin.settings.scss";
-@import "./_color.settings.scss";
-@import "./_article.settings.scss";
-@import "./_form.settings.scss";
-@import "./_button.settings.scss";
+@import "article/_article.settings.scss";
+@import "border/_border.settings.scss";
+@import "breakpoints/_breakpoints.settings.scss";
+@import "button/_button.settings.scss";
+@import "color/_color.settings.scss";
+@import "form/_form.settings.scss";
+@import "grid-system/_grid-system.settings.scss";
+@import "margin/_margin.settings.scss";
