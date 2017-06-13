@@ -1,0 +1,75 @@
+// ------------------------------------------------------------
+// 正文
+// ------------------------------------------------------------
+
+article,
+.article,
+.main {
+  font-size: $fontsize-base;
+  line-height: $lineheight-base;
+  color: $color-text;
+
+  a {
+    color: $color-text-link;
+    text-decoration: none;
+  }
+}
+
+
+// ------------------------------------------------------------
+// 段落
+// ------------------------------------------------------------
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.2em;
+}
+
+
+// ------------------------------------------------------------
+// 标题 h1-h6
+// ------------------------------------------------------------
+// h1 article级的标题
+// h2 section级的标题
+// h3 paragraph级的标题
+// h4 sub-paragraph级的标题
+// h5 属于正文的一部分，比正文高二级
+// h6 属于正文的一部分，比正文高一级
+// .heading 文章标题
+// .subheading 文章副标题
+
+h1,h2 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+h3,h4 {
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h5,h6 {
+  font-weight: bold;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+h1 {font-size: $fontsize-h1; line-height: $lineheight-h1;}
+h2 {font-size: $fontsize-h2; line-height: $lineheight-h2;}
+h3 {font-size: $fontsize-h3; line-height: $lineheight-h3;}
+h4 {font-size: $fontsize-h4; line-height: $lineheight-h4;}
+h5 {font-size: $fontsize-h5; line-height: $lineheight-h5;}
+h6 {font-size: $fontsize-h6; line-height: $lineheight-h6;}
+
+// ------------------------------------------------------------
+// 文章的副标题
+// ------------------------------------------------------------
+
+small,
+.small {
+  font-size: 0.85em;
+}
+
+

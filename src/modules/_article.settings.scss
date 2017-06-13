@@ -1,0 +1,19 @@
+// 基准字体和行高
+$fontsize-base: rem(1);
+$lineheight-base: $fontsize-base * 1.8;
+
+// h1-h6的字体大小
+$fontsize-h1: $fontsize-base * 2;
+$fontsize-h2: $fontsize-base * 1.8;
+$fontsize-h3: $fontsize-base * 1.6;
+$fontsize-h4: $fontsize-base * 1.5;
+$fontsize-h5: $fontsize-base * 1.2;
+$fontsize-h6: $fontsize-base * 1.1;
+
+// h1-h6的行高
+$lineheight-h1: $fontsize-h1 * 1.1;
+$lineheight-h2: $fontsize-h2 * 1.1;
+$lineheight-h3: $fontsize-h3 * 1.4;
+$lineheight-h4: $fontsize-h4 * 1.4;
+$lineheight-h5: $fontsize-h5 * 2;
+$lineheight-h6: $fontsize-h6 * 2;
