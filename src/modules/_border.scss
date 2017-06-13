@@ -1,0 +1,5 @@
+@import "./_border.mixins.scss";
+
+@each $suffix, $width in $border-width-list {
+    @include tim-border-all($suffix, $width, #aaa);
+}

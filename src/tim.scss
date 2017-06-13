@@ -31,8 +31,7 @@ $ie: false !default;
 // typography
 // ------------------------------------------------------------
 
-@import "./modules/_headings.scss";
-@import "./modules/_paragraphs.scss";
+@import "./modules/_article.scss";
 
 // ------------------------------------------------------------
 // utilities
@@ -43,6 +42,7 @@ $ie: false !default;
 @import "./modules/_float.scss";
 @import "./modules/_wrapper.scss";
 @import "./modules/_image.scss";
+@import "./modules/_border.scss";
 
 // ------------------------------------------------------------
 // form

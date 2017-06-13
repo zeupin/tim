@@ -1,0 +1,12 @@
+// 默认border宽度
+$border-width-default: 3px;
+
+// border宽度表
+$border-width-list: (
+  '': $border-width-default,
+  '-1px': 1px,
+  '-fine': $border-width-default * 0.8,
+  '-finer': $border-width-default * 0.5,
+  '-thick': $border-width-default * 2,
+  '-thicker': $border-width-default * 4,
+);
