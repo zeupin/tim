@@ -12,14 +12,25 @@
 
 
 // ------------------------------------------------------------
-// @mixin tim-make-row()
+// @mixin tim-make-row-colspacing()
 // ------------------------------------------------------------
 
-@mixin tim-make-row($gutterclass, $gutterwidth) {
-  .row#{$gutterclass} {
-    margin-left: ($gutterwidth / -2);
-    margin-right: ($gutterwidth / -2);
+@mixin tim-make-row-colspacing($classname, $width) {
+  .row#{$classname} {
+    margin-left: ($width / -2);
+    margin-right: ($width / -2);
     @include clearfix;
+  }
+}
+
+
+// ------------------------------------------------------------
+// @mixin tim-make-row-rowspacing()
+// ------------------------------------------------------------
+
+@mixin tim-make-row-rowspacing($classname, $height) {
+  .row#{$classname} {
+    margin-bottom: $height;
   }
 }
 
@@ -27,29 +38,29 @@
 // ------------------------------------------------------------
 // @mixin tim-make-grid()
 // ------------------------------------------------------------
-// 1. 限定背景只显示在内容区域，不显示在padding设置的gutter区域
+// 1. 限定背景只显示在内容区域，不显示在padding设置的colspacing区域
 
-@mixin tim-make-grid($gutterclass, $gutterwidth) {
-  @if ($gutterclass == '') {
+@mixin tim-make-grid($colspacingclass, $colspacingwidth) {
+  @if ($colspacingclass == '') {
     .grid {
       position: relative;
       min-height: 1px;
       float: left;
       overflow: hidden;
       background-clip: content-box;   // 1
-      padding-left: $gutterwidth / 2;
-      padding-right: $gutterwidth / 2;
+      padding-left: $colspacingwidth / 2;
+      padding-right: $colspacingwidth / 2;
     }
   }
   @else {
-    #{$gutterclass} > .grid {
+    #{$colspacingclass} > .grid {
       position: relative;
       min-height: 1px;
       float: left;
       overflow: hidden;
       background-clip: content-box;   // 1
-      padding-left: $gutterwidth / 2;
-      padding-right: $gutterwidth / 2;
+      padding-left: $colspacingwidth / 2;
+      padding-right: $colspacingwidth / 2;
     }
   }
 }
@@ -59,15 +70,15 @@
 // @mixin tim-make-grid-width()
 // ------------------------------------------------------------
 
-@mixin tim-make-grid-width($columns) {
-  @for $i from 1 through $columns {
-    $map: ".w-#{$columns}-#{$i}";
+@mixin tim-make-grid-width($columncount) {
+  @for $i from 1 through $columncount {
+    $map: ".w-#{$columncount}-#{$i}";
     @each $screen, $val in $breakpoints {
-      $map: append($map, ".w-#{$columns}-#{$i}--#{$screen}", comma);
+      $map: append($map, ".w-#{$columncount}-#{$i}--#{$screen}", comma);
     }
 
     #{$map} {
-      width: percentage( $i / $columns);
+      width: percentage( $i / $columncount);
     }
   }
 }
@@ -79,15 +90,15 @@
 //
 // 注意：最多只到 push-4-3, 没有 push-4-4 这种
 
-@mixin tim-make-grid-push($columns) {
-  @for $i from 1 to $columns {
-    $map: ".push-#{$columns}-#{$i}";
+@mixin tim-make-grid-push($columncount) {
+  @for $i from 1 to $columncount {
+    $map: ".push-#{$columncount}-#{$i}";
     @each $screen, $val in $breakpoints {
-      $map: append($map, ".push-#{$columns}-#{$i}--#{$screen}", comma);
+      $map: append($map, ".push-#{$columncount}-#{$i}--#{$screen}", comma);
     }
 
     #{$map} {
-      left: percentage( $i / $columns);
+      left: percentage( $i / $columncount);
     }
   }
 }
@@ -99,15 +110,15 @@
 //
 // 注意：最多只到 pull-4-3, 没有 pull-4-4 这种
 
-@mixin tim-make-grid-pull($columns) {
-  @for $i from 1 to $columns {
-    $map: ".pull-#{$columns}-#{$i}";
+@mixin tim-make-grid-pull($columncount) {
+  @for $i from 1 to $columncount {
+    $map: ".pull-#{$columncount}-#{$i}";
     @each $screen, $val in $breakpoints {
-      $map: append($map, ".pull-#{$columns}-#{$i}--#{$screen}", comma);
+      $map: append($map, ".pull-#{$columncount}-#{$i}--#{$screen}", comma);
     }
 
     #{$map} {
-      right: percentage( $i / $columns);
+      right: percentage( $i / $columncount);
     }
   }
 }
@@ -119,15 +130,15 @@
 //
 // 注意：最多只到 offset-4-3, 没有 offset-4-4 这种
 
-@mixin tim-make-grid-offset($columns) {
-  @for $i from 1 to $columns {
-    $map: ".offset-#{$columns}-#{$i}";
+@mixin tim-make-grid-offset($columncount) {
+  @for $i from 1 to $columncount {
+    $map: ".offset-#{$columncount}-#{$i}";
     @each $screen, $val in $breakpoints {
-      $map: append($map, ".offset-#{$columns}-#{$i}--#{$screen}", comma);
+      $map: append($map, ".offset-#{$columncount}-#{$i}--#{$screen}", comma);
     }
 
     #{$map} {
-      margin-left: percentage( $i / $columns);
+      margin-left: percentage( $i / $columncount);
     }
   }
 }

@@ -4,20 +4,36 @@
 // 常用的有：2列,3列,4列,5列,6列,7列,8列,9列,10列,12列,20列
 // 可根据需要裁剪。
 
-$grid-columns-list: 2 3 4 5 6 7 8 9 10 12 20;
+$grid-columncount-list: 12,5,7;
 
 
 // ------------------------------------------------------------
-// Gutter系列
+// Gutters列表--网格的水平间距
 // ------------------------------------------------------------
 // 用法：
-// <div class="container gutter-xx">
+// <div class="row colspacing-xx">
 // </div>
 
-$grid-gutter-list: (
-  '': 2%, // 默认gutter宽度
-  '.no-gutter' : 0, // 不要列间距
-  ".gutter-s" : 1%, // 稍小一点的gutter
-  ".gutter-x" : 3%, // 稍大一点的gutter
-  ".gutter-xx" : 4%, // 更大一点的gutter
+$grid-colspacing-list: (
+  '': 2.5%,                 // 默认colspacing
+  '.colspacing-0' : 0,      // 不要列间距
+  ".colspacing-s" : 1%,     // 稍小一点的colspacing
+  ".colspacing-x" : 3%,     // 稍大一点的colspacing
+  ".colspacing-xx" : 5%,    // 更大一点的colspacing
+);
+
+
+// ------------------------------------------------------------
+// Rowspacing列表--网格的行间距
+// ------------------------------------------------------------
+// 用法：
+// <div class="row rowspacing-s">
+// </div>
+
+$grid-rowspacing-list: (
+  '': rem(1.5),             // 默认rowspacing
+  '.rowspacing-0': 0,       // 无行间距
+  '.rowspacing-s': rem(1),  // 稍小一点的rowspacing
+  '.rowspacing-x': rem(2),  // 稍大一点的rowspacing
+  '.rowspacing-xx': rem(3), // 更大一点的rowspacing
 );

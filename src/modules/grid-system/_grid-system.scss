@@ -31,22 +31,37 @@
 
 
 // ------------------------------------------------------------
-// row 和 grid
+// row
 // ------------------------------------------------------------
 
-@each $gutterclass, $gutterwidth in $grid-gutter-list {
-  @include tim-make-row($gutterclass, $gutterwidth);
-  @include tim-make-grid($gutterclass, $gutterwidth);
+// 网格的列间距
+@each $classname, $value in $grid-colspacing-list {
+  @include tim-make-row-colspacing($classname, $value);
+
+}
+
+// 网格的行间距
+@each $classname, $value in $grid-rowspacing-list {
+  @include tim-make-row-rowspacing($classname, $value);
 }
 
 
 // ------------------------------------------------------------
+// row
+// ------------------------------------------------------------
+
+@each $classname, $value in $grid-colspacing-list {
+  @include tim-make-grid($classname, $value);
+}
+
+ 
+// ------------------------------------------------------------
 // width, push, pull, offset
 // ------------------------------------------------------------
 
-@each $columns in $grid-columns-list {
-  @include tim-make-grid-width($columns);
-  @include tim-make-grid-push($columns);
-  @include tim-make-grid-pull($columns);
-  @include tim-make-grid-offset($columns);
+@each $columncount in $grid-columncount-list {
+  @include tim-make-grid-width($columncount);
+  @include tim-make-grid-push($columncount);
+  @include tim-make-grid-pull($columncount);
+  @include tim-make-grid-offset($columncount);
 }
