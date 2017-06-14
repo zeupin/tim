@@ -31,7 +31,7 @@ $grid-colspacing-list: (
 // </div>
 
 $grid-rowspacing-list: (
-  '': rem(1.5),             // 默认rowspacing
+  '': 0,                    // 默认rowspacing
   '.rowspacing-0': 0,       // 无行间距
   '.rowspacing-s': rem(1),  // 稍小一点的rowspacing
   '.rowspacing-x': rem(2),  // 稍大一点的rowspacing

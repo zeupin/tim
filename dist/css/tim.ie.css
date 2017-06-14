@@ -557,15 +557,15 @@ template {
 }
 
 .rowspacing-s > .grid {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .rowspacing-x > .grid {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 .rowspacing-xx > .grid {
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 }
 
 .grid {
@@ -969,8 +969,8 @@ template {
 article,
 .article,
 .main {
-  font-size: 1rem;
-  line-height: 1.8rem;
+  font-size: 16px;
+  line-height: 28.8px;
   color: #303336;
 }
 article a,
@@ -1004,33 +1004,33 @@ h5, h6 {
 }
 
 h1 {
-  font-size: 2rem;
-  line-height: 2.2rem;
+  font-size: 32px;
+  line-height: 35.2px;
 }
 
 h2 {
-  font-size: 1.8rem;
-  line-height: 1.98rem;
+  font-size: 28.8px;
+  line-height: 31.68px;
 }
 
 h3 {
-  font-size: 1.6rem;
-  line-height: 2.24rem;
+  font-size: 25.6px;
+  line-height: 35.84px;
 }
 
 h4 {
-  font-size: 1.5rem;
-  line-height: 2.1rem;
+  font-size: 24px;
+  line-height: 33.6px;
 }
 
 h5 {
-  font-size: 1.2rem;
-  line-height: 2.4rem;
+  font-size: 19.2px;
+  line-height: 38.4px;
 }
 
 h6 {
-  font-size: 1.1rem;
-  line-height: 2.2rem;
+  font-size: 17.6px;
+  line-height: 35.2px;
 }
 
 small,
@@ -1130,42 +1130,42 @@ small,
 }
 
 .margin-top {
-  margin-top: 1rem !important;
+  margin-top: 16px !important;
 }
 
 .margin-bottom {
-  margin-bottom: 1rem !important;
+  margin-bottom: 16px !important;
 }
 
 .margin-y {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
 }
 
 .margin-top-1 {
-  margin-top: 1.5rem !important;
+  margin-top: 24px !important;
 }
 
 .margin-bottom-1 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 24px !important;
 }
 
 .margin-y-1 {
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important;
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
 }
 
 .margin-top-2 {
-  margin-top: 2rem !important;
+  margin-top: 32px !important;
 }
 
 .margin-bottom-2 {
-  margin-bottom: 2rem !important;
+  margin-bottom: 32px !important;
 }
 
 .margin-y-2 {
-  margin-top: 2rem !important;
-  margin-bottom: 2rem !important;
+  margin-top: 32px !important;
+  margin-bottom: 32px !important;
 }
 
 .text-center {
@@ -1182,14 +1182,14 @@ small,
 
 .image-left {
   float: left;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-right: 32px;
+  margin-bottom: 32px;
 }
 
 .image-right {
   float: right;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+  margin-left: 32px;
+  margin-bottom: 32px;
 }
 
 .block-center {

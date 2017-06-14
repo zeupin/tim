@@ -29,8 +29,15 @@
 // ------------------------------------------------------------
 
 @mixin tim-make-row-rowspacing($classname, $height) {
-  .row#{$classname} {
-    margin-bottom: $height;
+  @if ($classname == '') {
+    .grid {
+      margin-bottom: $height;
+    }
+  }
+  @else {
+    #{$classname} > .grid {
+      margin-bottom: $height;
+    }
   }
 }
 
