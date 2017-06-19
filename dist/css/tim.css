@@ -1276,6 +1276,34 @@ small,
   border: 12px solid #aaa;
 }
 
+.striped > *:nth-child(odd) {
+  background-color: #fff;
+}
+.striped > *:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.striped-inverse > *:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+.striped-inverse > *:nth-child(even) {
+  background-color: #fff;
+}
+
+table.striped > tbody > *:nth-child(odd) {
+  background-color: #fff;
+}
+table.striped > tbody > *:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+table.striped-inverse > tbody > *:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+table.striped-inverse > tbody > *:nth-child(even) {
+  background-color: #fff;
+}
+
 .btn {
   display: inline-block;
   margin-bottom: 0;

@@ -11,9 +11,31 @@
 
 
 // ------------------------------------------------------------
-// .striped-inverse 条纹（奇偶行的背景色互换）
+// .striped-inverse 反色条纹
 // ------------------------------------------------------------
 
 .striped-inverse {
   @include striped($striped-bgcolor-2, $striped-bgcolor-1);
+}
+
+
+// ------------------------------------------------------------
+// table.striped 条纹表格
+// ------------------------------------------------------------
+
+table.striped {
+  & > tbody {
+    @include striped($striped-bgcolor-1, $striped-bgcolor-2);
+  }
+}
+
+
+// ------------------------------------------------------------
+// table.striped 反色条纹表格
+// ------------------------------------------------------------
+
+table.striped-inverse {
+  & > tbody {
+    @include striped($striped-bgcolor-2, $striped-bgcolor-1);
+  }
 }
