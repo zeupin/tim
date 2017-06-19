@@ -1,0 +1,19 @@
+@import "./_striped.settings.scss";
+
+
+// ------------------------------------------------------------
+// .striped 条纹
+// ------------------------------------------------------------
+
+.striped  {
+  @include striped($striped-bgcolor-1, $striped-bgcolor-2);
+}
+
+
+// ------------------------------------------------------------
+// .striped-inverse 条纹（奇偶行的背景色互换）
+// ------------------------------------------------------------
+
+.striped-inverse {
+  @include striped($striped-bgcolor-2, $striped-bgcolor-1);
+}

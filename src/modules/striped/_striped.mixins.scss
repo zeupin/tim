@@ -1,0 +1,11 @@
+@mixin striped($odd-bgcolor, $even-bgcolor) {
+  // 奇数
+  & > *:nth-child(odd) {
+    background-color: $odd-bgcolor;
+  }
+
+  // 偶数
+  & > *:nth-child(even) {
+    background-color: $even-bgcolor;
+  }
+}
