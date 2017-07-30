@@ -33,6 +33,12 @@ $ie: false !default;
 @import "./modules/grid-system/_grid-system.scss";
 
 // ------------------------------------------------------------
+// floor-area-layer 布局
+// ------------------------------------------------------------
+
+@import "./modules/floor-area-layer/_floor.scss";
+
+// ------------------------------------------------------------
 // typography
 // ------------------------------------------------------------
 
@@ -49,6 +55,7 @@ $ie: false !default;
 @import "./modules/image/_image.scss";
 @import "./modules/border/_border.scss";
 @import "./modules/striped/_striped.scss";
+@import "./modules/size/_size.scss";
 
 // ------------------------------------------------------------
 // form
