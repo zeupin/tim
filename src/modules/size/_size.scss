@@ -1,16 +1,20 @@
-.auto-width {
+// 一直都很犹豫这个类名怎么起，试过auto-width, auto-height之类，但是查阅字典
+// 下来还是叫 full-width和full-height更符合英文含义。
+
+.full-width {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.auto-height {
+.full-height {
   display: block;
   height: 100%;
   width: auto;
 }
 
-.auto-size {
+.full-size,
+.full-box {
   display: block;
   width: 100%;
   height: 100%;
