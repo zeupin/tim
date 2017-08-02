@@ -47,21 +47,32 @@
 
 
 // ------------------------------------------------------------
-// row
+// grid
 // ------------------------------------------------------------
 
 @each $classname, $value in $grid-colspacing-list {
   @include tim-make-grid($classname, $value);
 }
 
- 
+
 // ------------------------------------------------------------
 // width, push, pull, offset
 // ------------------------------------------------------------
 
-@each $columncount in $grid-columncount-list {
-  @include tim-make-grid-width($columncount);
-  @include tim-make-grid-push($columncount);
-  @include tim-make-grid-pull($columncount);
-  @include tim-make-grid-offset($columncount);
+// 默认屏幕
+@each $grid_cols in $grid-columncount-list {
+  @include tim_grid_width($grid_cols, all, '');
+  @include tim_grid_offset($grid_cols, all, '');
+  @include tim_grid_push($grid_cols, all, '');
+  @include tim_grid_pull($grid_cols, all, '');
+}
+
+// 各种尺寸的屏幕
+@each $screen_type, $screen_width in $breakpoints {
+  @each $grid_cols in $grid-columncount-list {
+    @include tim_grid_width($grid_cols, all, $screen_type);
+    @include tim_grid_offset($grid_cols, all, $screen_type);
+    @include tim_grid_push($grid_cols, all, $screen_type);
+    @include tim_grid_pull($grid_cols, all, $screen_type);
+  }
 }

@@ -74,78 +74,127 @@
 
 
 // ------------------------------------------------------------
-// @mixin tim-make-grid-width()
+// 生成对应的width
 // ------------------------------------------------------------
-
-@mixin tim-make-grid-width($columncount) {
-  @for $i from 1 through $columncount {
-    $map: ".w-#{$columncount}-#{$i}";
-    @each $screen, $val in $breakpoints {
-      $map: append($map, ".w-#{$columncount}-#{$i}--#{$screen}", comma);
-    }
-
-    #{$map} {
-      width: percentage( $i / $columncount);
-    }
-  }
-}
-
-
-// ------------------------------------------------------------
-// tim-make-grid-push，生成对应的push
-// ------------------------------------------------------------
+// $cols 总列数
+// $list 子列数列表。(1,3,5)只生成1列、3列、5列，或者all
+// $screen 屏幕类型。sm，lg之类
 //
-// 注意：最多只到 push-4-3, 没有 push-4-4 这种
+@mixin tim_grid_width($cols, $list:'all', $screen:'') {
+  $postfix: "--#{$screen}";
 
-@mixin tim-make-grid-push($columncount) {
-  @for $i from 1 to $columncount {
-    $map: ".push-#{$columncount}-#{$i}";
-    @each $screen, $val in $breakpoints {
-      $map: append($map, ".push-#{$columncount}-#{$i}--#{$screen}", comma);
+  @if ($screen == '') {
+    $postfix: '';
+  }
+
+  @if ($list == 'all') {
+    $list: ();
+    @for $i from 1 through $cols {
+      $list: append($list, $i, comma);
     }
+  }
 
-    #{$map} {
-      left: percentage( $i / $columncount);
+  @each $i in $list {
+    @if ($i <= $cols) {
+      .w-#{$cols}-#{$i}#{$postfix} {
+        width: percentage($i / $cols);
+      }
     }
   }
 }
 
-
 // ------------------------------------------------------------
-// tim-make-grid-pull，生成对应的pull
+// 生成对应的offset
 // ------------------------------------------------------------
-//
-// 注意：最多只到 pull-4-3, 没有 pull-4-4 这种
-
-@mixin tim-make-grid-pull($columncount) {
-  @for $i from 1 to $columncount {
-    $map: ".pull-#{$columncount}-#{$i}";
-    @each $screen, $val in $breakpoints {
-      $map: append($map, ".pull-#{$columncount}-#{$i}--#{$screen}", comma);
-    }
-
-    #{$map} {
-      right: percentage( $i / $columncount);
-    }
-  }
-}
-
-
-// ------------------------------------------------------------
-// tim-make-grid-offset，生成对应的offset
-// ------------------------------------------------------------
+// $cols 总列数
+// $list 子列数列表。(1,3,5)只生成1列、3列、5列，或者all
+// $screen 屏幕类型。sm，lg之类
 //
 // 注意：最多只到 offset-4-3, 没有 offset-4-4 这种
+//
+@mixin tim_grid_offset($cols, $list:'all', $screen:'') {
+  $postfix: "--#{$screen}";
 
-@mixin tim-make-grid-offset($columncount) {
-  @for $i from 1 to $columncount {
-    $map: ".offset-#{$columncount}-#{$i}";
-    @each $screen, $val in $breakpoints {
-      $map: append($map, ".offset-#{$columncount}-#{$i}--#{$screen}", comma);
+  @if ($screen == '') {
+    $postfix: '';
+  }
+
+  @if ($list == 'all') {
+    $list: ();
+    @for $i from 1 to $cols {
+      $list: append($list, $i, comma);
     }
+  }
 
-    #{$map} {
-      margin-left: percentage( $i / $columncount);
+  @each $i in $list {
+    @if ($i < $cols) {
+      .offset-#{$cols}-#{$i}#{$postfix} {
+        margin-left: percentage( $i / $cols);
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// 生成对应的push
+// ------------------------------------------------------------
+// $cols 总列数
+// $list 子列数列表。(1,3,5)只生成1列、3列、5列，或者all
+// $screen 屏幕类型。sm，lg之类
+//
+// 注意：最多只到 push-4-3, 没有 push-4-4 这种
+//
+@mixin tim_grid_push($cols, $list:'all', $screen:'') {
+  $postfix: "--#{$screen}";
+
+  @if ($screen == '') {
+    $postfix: '';
+  }
+
+  @if ($list == 'all') {
+    $list: ();
+    @for $i from 1 to $cols {
+      $list: append($list, $i, comma);
+    }
+  }
+
+  @each $i in $list {
+    @if ($i < $cols) {
+      .push-#{$cols}-#{$i}#{$postfix} {
+        left: percentage( $i / $cols);
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// 生成对应的pull
+// ------------------------------------------------------------
+// $cols 总列数
+// $list 子列数列表。(1,3,5)只生成1列、3列、5列，或者all
+// $screen 屏幕类型。sm，lg之类
+//
+// 注意：最多只到 pull-4-3, 没有 pull-4-4 这种
+//
+@mixin tim_grid_pull($cols, $list:'all', $screen:'') {
+  $postfix: "--#{$screen}";
+
+  @if ($screen == '') {
+    $postfix: '';
+  }
+
+  @if ($list == 'all') {
+    $list: ();
+    @for $i from 1 to $cols {
+      $list: append($list, $i, comma);
+    }
+  }
+
+  @each $i in $list {
+    @if ($i < $cols) {
+      .pull-#{$cols}-#{$i}#{$postfix} {
+        right: percentage( $i / $cols);
+      }
     }
   }
 }
